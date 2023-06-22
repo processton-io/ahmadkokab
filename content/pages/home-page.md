@@ -29,7 +29,7 @@ blocks:
                 content: See my Blogs
                 url: /blogs
           hero_photo:
-            hero_image: /img/img20230524193654.jpg
+            hero_image: /img/website-picture.jpg
     variant: default
     title: Hi, i'm Ahmad Faryab Kokab
   - type: recentArticles
