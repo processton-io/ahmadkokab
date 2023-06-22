@@ -24,7 +24,15 @@ export default function Hero({ data }) {
       return <VisualImageWithHeading data={data} />;
     default:
       return (
-        <div className='transition-all duration-1000'>
+        <div className={clsx(
+          'transition-all duration-1000',
+          {
+            'min-h-screen items-center ': isFull,
+          },
+          {
+            'text-center': isCentered,
+          },
+        )}>
 
           <Parallax
               bgImage={bgImage}
@@ -42,7 +50,7 @@ export default function Hero({ data }) {
               },
             )}
           >
-            <div className='container mx-auto max-w-screen-xl flex'>
+            <div className='container mx-auto max-w-screen-xl flex flex-col-reverse md:flex-row'>
               <Container className={`lg:w-2/3`}>
                 {data?.title && (
                   <h1
