@@ -33,5 +33,10 @@ blocks:
     variant: default
     title: Hi, i'm Ahmad Faryab Kokab
 seo:
-  ogimage: /img/4000_2_01.jpg
+  ogimage: /img/img20230524193654.jpg
+  title: Ahmad Faryab Kokab | Senior Software Engineer
+  description: |-
+    Hi, i am Ahmad Faryab Kokab
+    Creative developer from Pakistan.
+    I will help you overcome your technical challenges
 ---
