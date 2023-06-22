@@ -12,15 +12,19 @@ blocks:
       - hero:
           variant: default
           height: full
-          title: Start Building your website
-          content: Enable Identity and Git hub gateway in you app setting at netlify, then click button below to continue..
+          title: Hi, i'm
+          content: Ahmad Faryab Kokab Creative developer from Pakistan. I will help you overcome your technical challanges..
           buttons:
             - button:
                 variant: button
-                content: Get Started
-                url: /admin
+                content: Contact me
+                url: /contact-us
+            - button:
+                variant: secondary
+                content: See my Blogs
+                url: /blogs
     variant: default
-    title: For Your Next Generation Website
+    title: Hi, i'm Ahmad Faryab Kokab
 seo:
   ogimage: /img/4000_2_01.jpg
 ---
