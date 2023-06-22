@@ -4,19 +4,13 @@ import PropTypes from 'prop-types'
 
 import Layout from '@/components/Layout'
 import DefaultHead from '../components/Head/DefaultHead'
+import Blog from '../../src/components/Blog';
 
 const Post = ({ data }) => {
+  console.log(data);
   return (
     <Layout nav={true}>
-      <section className="container mx-auto px-4 py-24">
-        <h1 className="mx-auto my-12 max-w-3xl text-6xl font-bold dark:text-white">
-          {data.post.frontmatter.title}
-        </h1>
-        <div
-          className="prose prose-lg mx-auto max-w-3xl dark:prose-invert"
-          dangerouslySetInnerHTML={{ __html: data?.post.html }}
-        ></div>
-      </section>
+      <Blog data={data.post.frontmatter} />
     </Layout>
   )
 }
