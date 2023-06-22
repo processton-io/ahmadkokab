@@ -5,6 +5,10 @@ layout: post
 title: Unlocking the Power of Flexible Content Management
 permalink: /blog/decoupled-cms-unlocking-the-power-of-flexible-content-management/
 thumbnail: /img/background.jpg
+photo:
+  image: /img/decapcms.jpeg
+bg_photo:
+  bg_image: /img/background.jpg
 date: 2023-06-21T11:46:00.077Z
 author: a1d1172a-8736-47c1-831d-3e508729fee2
 excerpt: In the world of content management systems (CMS), decoupled

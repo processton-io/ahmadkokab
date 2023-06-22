@@ -5,6 +5,10 @@ layout: post
 title: "Setting Up Netlify CMS: A Step-by-Step Guide"
 permalink: /blog/setting-up-netlify-cms-step-by-step-guide/
 thumbnail: /img/background.jpg
+photo:
+  image: /img/decapcms.jpeg
+bg_photo:
+  bg_image: /img/background.jpg
 date: 2023-06-22T11:39:32.295Z
 author: a1d1172a-8736-47c1-831d-3e508729fee2
 excerpt: Netlify CMS is a popular content management system that allows you to

@@ -5,6 +5,10 @@ layout: post
 title: "Drupal vs. WordPress: Weighing the Pros and Cons"
 permalink: /blog/drupal-vs-wordpress-weight-the-pros-and-cons/
 thumbnail: /img/background.jpg
+photo:
+  image: /img/wordpress-vs-drupal-1024x512.png
+bg_photo:
+  bg_image: /img/background.jpg
 date: 2023-06-19T19:00:00.000Z
 author: a1d1172a-8736-47c1-831d-3e508729fee2
 excerpt: When it comes to content management systems (CMS), Drupal and WordPress
