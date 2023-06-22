@@ -9,7 +9,7 @@ export default function Blog(data) {
     
     return (
         <>
-            <div className='bg-auto bg-no-repeat bg-center p-2' style={{backgroundImage: `url(`+data?.data?.thumbnail+`)`}}>
+            <div className='bg-cover bg-center p-2' style={{backgroundImage: `url(`+data?.data?.thumbnail+`)`}}>
                 <div className='bg-black bg-opacity-50 flex flex-col md:flex-row h-32 md:h-64 shadow text-white'>
                     <div className='flex-0 md:flex-1 p-2 md:p-12'>
                         <nav className="flex" aria-label="Breadcrumb">
