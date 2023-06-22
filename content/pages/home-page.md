@@ -32,6 +32,7 @@ blocks:
             hero_image: /img/img20230524193654.jpg
     variant: default
     title: Hi, i'm Ahmad Faryab Kokab
+  - type: recentArticles
 seo:
   ogimage: /img/img20230524193654.jpg
   title: Ahmad Faryab Kokab | Senior Software Engineer
