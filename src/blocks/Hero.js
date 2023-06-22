@@ -68,7 +68,7 @@ export default function Hero({ data }) {
                     <Image
                       src={data?.photo?.image}
                       alt={data?.photo?.alt}
-                      className="w-72 rounded-md"
+                      className="w-72 rounded-full"
                     />
                 </div>
               ) : data?.hero_photo && data?.hero_photo?.hero_image && (
@@ -76,7 +76,7 @@ export default function Hero({ data }) {
                     <Image
                       src={data?.hero_photo?.hero_image}
                       alt={data?.hero_photo?.alt}
-                      className="w-72 rounded-md"
+                      className="w-72 rounded-full"
                     />
                 </div>
               )}
