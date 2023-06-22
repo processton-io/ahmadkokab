@@ -4,7 +4,6 @@ type: post
 layout: post
 title: "Drupal vs. WordPress: Weighing the Pros and Cons"
 permalink: /blog/drupal-vs-wordpress-weight-the-pros-and-cons/
-thumbnail: /img/background.jpg
 photo:
   image: /img/wordpress-vs-drupal-1024x512.png
 bg_photo:

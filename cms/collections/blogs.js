@@ -35,13 +35,6 @@ const collection = {
       default: '',
     },
     PermalinkField('blog'),
-    {
-      label: 'Featured Image',
-      name: 'thumbnail',
-      widget: 'image',
-      default: '',
-      required: false,
-    },
     ImageField(),
     backgroundImageField(),
     {

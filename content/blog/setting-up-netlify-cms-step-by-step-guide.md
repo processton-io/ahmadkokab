@@ -4,7 +4,6 @@ type: post
 layout: post
 title: "Setting Up Netlify CMS: A Step-by-Step Guide"
 permalink: /blog/setting-up-netlify-cms-step-by-step-guide/
-thumbnail: /img/background.jpg
 photo:
   image: /img/decapcms.jpeg
 bg_photo:

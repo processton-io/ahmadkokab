@@ -4,7 +4,6 @@ type: post
 layout: post
 title: Unlocking the Power of Flexible Content Management
 permalink: /blog/decoupled-cms-unlocking-the-power-of-flexible-content-management/
-thumbnail: /img/background.jpg
 photo:
   image: /img/decapcms.jpeg
 bg_photo:

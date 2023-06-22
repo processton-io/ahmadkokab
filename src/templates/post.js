@@ -53,7 +53,6 @@ export const basicPageQuery = graphql`
         id
         title
         author
-        thumbnail
         excerpt
         type
         date
