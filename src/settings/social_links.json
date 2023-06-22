@@ -1,0 +1,53 @@
+{
+  "social_links": [
+    {
+      "show_in_header": true,
+      "permalink": "https://www.facebook.com",
+      "platform": "facebook",
+      "show_in_footer": false
+    },
+    {
+      "show_in_header": true,
+      "permalink": "https://www.twitter.com",
+      "platform": "twitter",
+      "show_in_footer": false
+    },
+    {
+      "show_in_header": true,
+      "permalink": "https://www.linkedin.com",
+      "platform": "linkedin",
+      "show_in_footer": false
+    },
+    {
+      "show_in_header": true,
+      "permalink": "https://www.youtube.com",
+      "platform": "youtube",
+      "show_in_footer": false
+    },
+    {
+      "show_in_header": true,
+      "permalink": "https://www.instagram.com",
+      "platform": "instagram",
+      "show_in_footer": false
+    },
+    {
+      "show_in_header": true,
+      "permalink": "lorem@ipsom.com",
+      "platform": "email",
+      "show_in_footer": false
+    },
+    {
+      "show_in_header": true,
+      "permalink": "+00 000 0000000",
+      "platform": "phone",
+      "show_in_footer": false
+    },
+    {
+      "show_in_header": true,
+      "permalink": "09:00 AM to 10:00 PM",
+      "platform": "calendar",
+      "show_in_footer": false
+    }
+  ],
+  "show_above_header": true
+}
