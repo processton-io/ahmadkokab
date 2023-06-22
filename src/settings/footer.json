@@ -6,21 +6,19 @@
       "type": "default"
     },
     {
-      "name": "Get Started",
-      "permalink": "https://github.com/processton-io/edge-base",
+      "name": "Blogs",
+      "permalink": "/blogs",
       "type": "default"
     },
     {
-      "name": "Sponsored By",
-      "permalink": "/sponsored-by",
+      "name": "Contact me",
+      "permalink": "/contact-me",
       "type": "default"
     }
   ],
-  "title": "Edge Base",
-  "content": "Your next generation website starter",
+  "title": "",
+  "content": "Creative developer from Pakistan",
   "photo": {
-    "image": "/img/edge-base-logo.png",
-    "alt": "edge-base-logo"
   },
-  "copyright": "2021-2022"
+  "copyright": "2022-2023"
 }

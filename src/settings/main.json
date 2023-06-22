@@ -6,19 +6,17 @@
       "type": "default"
     },
     {
-      "name": "Get Started",
-      "permalink": "https://github.com/processton-io/edge-base",
+      "name": "Blogs",
+      "permalink": "/blogs",
       "type": "default"
     },
     {
-      "name": "Sponsored By",
-      "permalink": "/sponsored-by",
+      "name": "Contact me",
+      "permalink": "/contact-me",
       "type": "default"
     }
   ],
-  "title": "Edge Base",
+  "title": "AFK Ch.",
   "photo": {
-    "image": "/img/edge-base-logo.png",
-    "alt": "edge-base-logo"
   }
 }

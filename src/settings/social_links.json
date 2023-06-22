@@ -2,50 +2,38 @@
   "social_links": [
     {
       "show_in_header": true,
-      "permalink": "https://www.facebook.com",
+      "permalink": "https://www.facebook.com/ahmadfaryabkokab/",
       "platform": "facebook",
       "show_in_footer": false
     },
     {
       "show_in_header": true,
-      "permalink": "https://www.twitter.com",
+      "permalink": "https://twitter.com/ahmadkokab",
       "platform": "twitter",
       "show_in_footer": false
     },
     {
       "show_in_header": true,
-      "permalink": "https://www.linkedin.com",
+      "permalink": "https://www.linkedin.com/in/ahmad-faryab-27b9716a/",
       "platform": "linkedin",
       "show_in_footer": false
     },
     {
       "show_in_header": true,
-      "permalink": "https://www.youtube.com",
-      "platform": "youtube",
-      "show_in_footer": false
-    },
-    {
-      "show_in_header": true,
-      "permalink": "https://www.instagram.com",
+      "permalink": "https://www.instagram.com/ahmadkokab/",
       "platform": "instagram",
       "show_in_footer": false
     },
     {
       "show_in_header": true,
-      "permalink": "lorem@ipsom.com",
+      "permalink": "ahmadkokab@gmail.com",
       "platform": "email",
       "show_in_footer": false
     },
     {
       "show_in_header": true,
-      "permalink": "+00 000 0000000",
+      "permalink": "+92 331 4745155",
       "platform": "phone",
-      "show_in_footer": false
-    },
-    {
-      "show_in_header": true,
-      "permalink": "09:00 AM to 10:00 PM",
-      "platform": "calendar",
       "show_in_footer": false
     }
   ],
