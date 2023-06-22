@@ -8,9 +8,16 @@ import Blog from '../../src/components/Blog';
 
 const Post = ({ data }) => {
   console.log(data);
+  const object = {
+    'title': data.post.frontmatter.title,
+    'excerpt' : data.post.frontmatter.excerpt,
+    'body' : data.post.html,
+    'thumbnail': data.post.frontmatter.thumbnail,
+    'date': date.data
+  };
   return (
     <Layout nav={true}>
-      <Blog data={data.post.frontmatter} />
+      <Blog data={object} />
     </Layout>
   )
 }
@@ -41,6 +48,10 @@ export const basicPageQuery = graphql`
         id
         title
         author
+        thumbnail
+        excerpt
+        type
+        date
         ...Seo
       }
     }

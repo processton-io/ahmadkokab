@@ -1,6 +1,6 @@
 import { PermalinkField } from '../fields/permalink-field';
 import seo from '../fields/seo';
-import { ID } from '../fields';
+import { ID, ImageField, backgroundImageField } from '../fields';
 
 const collection = {
   name: 'blog',
@@ -42,6 +42,8 @@ const collection = {
       default: '',
       required: false,
     },
+    ImageField(),
+    backgroundImageField(),
     {
       label: 'Date',
       name: 'date',
