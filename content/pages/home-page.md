@@ -13,7 +13,12 @@ blocks:
           variant: default
           height: full
           title: Hi, i'm
-          content: Ahmad Faryab Kokab Creative developer from Pakistan. I will help you overcome your technical challanges..
+          content: |-
+            # Ahmad Faryab Kokab 
+
+            #### **Creative developer** from **Pakistan**. 
+
+            I will help you overcome your technical challenges..
           buttons:
             - button:
                 variant: button
@@ -23,6 +28,8 @@ blocks:
                 variant: secondary
                 content: See my Blogs
                 url: /blogs
+          hero_photo:
+            hero_image: /img/img20230524193654.jpg
     variant: default
     title: Hi, i'm Ahmad Faryab Kokab
 seo:
