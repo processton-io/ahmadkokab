@@ -2,8 +2,8 @@
 id: ZYNAy0c3P
 type: page
 layout: page-builder
-title: Contact us
-permalink: /contact-us/
+title: Contact me
+permalink: /contact-me/
 blocks:
   - type: form
     title: Get in touch with me
