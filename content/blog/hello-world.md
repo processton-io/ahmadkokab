@@ -2,34 +2,113 @@
 id: 44d0d78e-1f11-4f92-85ac-d144d60bb573
 type: post
 layout: post
-title: Philosophy behind Edge Base.
-permalink: /blog/hello-world/
-thumbnail: /img/tezos-wpn1xnccgpw-unsplash.jpg
-date: 2022-05-11T19:16:41.067Z
+title: "Setting Up Netlify CMS: A Step-by-Step Guide"
+permalink: /blog/setting-up-netlify-cms-step-by-step-guide/
+thumbnail: /img/background.jpg
+date: 2023-06-22T11:39:32.295Z
 author: a1d1172a-8736-47c1-831d-3e508729fee2
-excerpt: If you’re a WordPress developer then you must have heard about a plugin
-  called Advanced Custom Fields and a Flexible Content field that allows editors
-  to generate new pages easily.
+excerpt: Netlify CMS is a popular content management system that allows you to
+  easily manage and organize your website content. In this step-by-step guide,
+  we will walk you through the process of setting up Netlify CMS from start to
+  finish.
 seo:
-  ogimage: /img/tezos-wpn1xnccgpw-unsplash.jpg
-  title: Hello World
-  description: If you’re a WordPress developer then you must have heard about a
-    plugin called Advanced Custom Fields and a Flexible Content field that
-    allows editors to generate new pages easily.
+  ogimage: /img/decapcms.jpeg
+  title: Setting Up Netlify CMS A Step-by-Step Guide
+  description: A Step-by-Step Guide to setup netlify cms
 ---
+## Prerequisites
 
-If you’re a WordPress developer then you must have heard about a plugin called Advanced Custom Fields and a Flexible Content field that allows editors to generate new pages easily.
+Before we begin, make sure you have the following prerequisites in place:
 
-When I started to move more into JAMStack I wanted to recreate ACF’s Flexible Content field in Gatsby. It's possible to use WordPress as a headless CMS and some headless CMS have implemented some sort of an alternative. Prismic has Slices (unfortunately you can’t create multiple repeatable fields within fields).
+* Node.js and npm installed on your machine.
+* Yarn package manager installed.
+* A code editor of your choice (e.g., Visual Studio Code).
+* Basic knowledge of JavaScript and web development concepts.
 
-For smaller projects WordPress or Prismic may be too complex. In such cases, I usually go with my favorite flat-file CMS - Netlify CMS.
+## Step 1: Create a New Project
 
-Netlify CMS offers everything you need, it’s open-source and free to use. The only thing missing? Flexible Content field. Fortunately, with beta features - Manual Initialization and Variable Types for List fields we can easily create a solution that copies ACF's Flexible Content.
+1. Open your terminal and create a new directory for your Netlify CMS project:
 
-## Why using flexible content is a great idea?
+   ```shell
+   mkdir netlify-cms
+   cd netlify-cms
+   ```
+2. Initialize a new npm project by running the following command:
 
-Advanced Custom Fields' Flexible Content allows editors to quickly make significant changes without engaging developers. Creating new pages is a breeze, and optimizing for conversions is easier.
+   ```shell
+   npm init -y
+   ```
 
-Using a singular template may not be the best way to organize your content, especially if you want to quickly test new changes. That's why component-based, modular design gives you much more flexibility.
+## Step 2: Install Dependencies
 
-It lowers development and maintenance costs. Websites are tools that have to generate business value. The better system you build the longer it’ll last without any code changes.
+1. Install the required dependencies using yarn:
+
+   ```shell
+   yarn add netlify-cms gatsby react react-dom
+   ```
+2. Additionally, you may need to install other packages depending on your specific project requirements, such as additional Gatsby plugins or a static site generator like Gatsby or Hugo.
+
+## Step 3: Configure Netlify CMS
+
+1. Create a new file named `config.yml` in the root of your project. This file will contain the configuration for Netlify CMS.
+
+   ```gitconfig
+   # config.yml
+   backend:
+     name: git-gateway
+     branch: main
+
+   media_folder: static/images
+   public_folder: /images
+
+   collections:
+     - name: articles
+       label: Articles
+       folder: content/articles
+       create: true
+       slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+       fields:
+         - { name: title, label: Title, widget: string }
+         - { name: content, label: Content, widget: markdown }
+   ```
+2. Customize the configuration according to your needs. You can define multiple collections, each with its own set of fields.
+
+## Step 4: Create Content Files
+
+1. Create a new directory named `content` in the root of your project.
+2. Inside the `content` directory, create a new directory for each collection you defined in the `config.yml`. For example, if you have an `articles` collection, create a directory named `articles`.
+3. Inside the collection directory, create individual content files in YAML, Markdown, or JSON format. For example, you might create a file named `my-first-article.md`:
+
+   ```markdown
+   ---
+   title: My First Article
+   ---
+   # Hello, World!
+   This is my first article using Netlify CMS.
+   ```
+
+## Step 5: Start the Development Server
+
+1. In your terminal, run the following command to start the development server:
+
+   ```shell
+   yarn develop
+   ```
+2. Open your web browser and visit `http://localhost:8000/admin`. You should see the Netlify CMS interface.
+3. Log in using your preferred authentication method.
+
+## Step 6: Generate the Public Static Website
+
+1. When you are ready to generate the public static website, open a new terminal window and run the following command:
+
+   ```shell
+   yarn prod
+   ```
+2. The static website will be generated and placed in the `public` directory.
+3. You can now deploy the contents of the `public` directory to your desired hosting provider.
+
+## Conclusion
+
+Congratulations! You have successfully set up Netlify CMS for your project. You can now leverage the power of Netlify CMS to manage your website content efficiently. Remember to explore the documentation for further customization options and integrations based on your specific requirements.
+
+Happy content managing!
