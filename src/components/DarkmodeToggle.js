@@ -1,12 +1,14 @@
 import React from 'react'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
+import clsx from 'clsx'
 
-export default function DarkmodeToggle() {
+export default function DarkmodeToggle({ className, ...props }) {
   return (
     <ThemeToggler>
       {({ theme, toggleTheme }) => {
         return (
           <button
+            className={clsx(className)}
             onClick={(e) => toggleTheme(theme === 'light' ? 'dark' : 'light')}
           >
             <svg
