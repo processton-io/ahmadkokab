@@ -1,3 +1,6 @@
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/abcff921-aaf9-4733-9836-97c6d83d20ca/deploy-status)](https://app.netlify.com/sites/ahmadkokab/deploys)
+
 # Ahmad Kokab Portfolio Website
 
 This repository contains the code for Ahmad Kokab's personal portfolio website, available at [ahmadkokab.me](https://ahmadkokab.me/). The website showcases Ahmad's projects, skills, and experiences. The website is built using Gatsby.js and incorporates various web technologies.
