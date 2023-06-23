@@ -5,6 +5,10 @@ layout: post
 title: Philosophy behind Edge Base.
 permalink: /blog/hello-world/
 thumbnail: /img/tezos-wpn1xnccgpw-unsplash.jpg
+photo:
+  image: /img/tezos-wpn1xnccgpw-unsplash.jpg
+bg_photo:
+  bg_image: /img/tezos-wpn1xnccgpw-unsplash.jpg
 date: 2022-05-11T19:16:41.067Z
 author: a1d1172a-8736-47c1-831d-3e508729fee2
 excerpt: If you’re a WordPress developer then you must have heard about a plugin
