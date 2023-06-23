@@ -29,6 +29,12 @@ export default function Form({ block }) {
     return lowercaseStr;
   }
 
+  const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -38,7 +44,7 @@ export default function Form({ block }) {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
+      body: encode({"form-name": block.title, ...formData}),
     })
       .then(() => {
         setSuccessMessage(form.settings.success_msg ? form.settings.success_msg : "Your request is submitted")

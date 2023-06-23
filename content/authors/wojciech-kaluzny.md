@@ -4,4 +4,4 @@ type: author
 title: Ahmad Faryab Kokab
 thumbnail: /img/img20230524193654.jpg
 ---
-WK is the technical wizard behind the technology delivered by Clean Commit.
+AK is the technical wizard behind this technology.

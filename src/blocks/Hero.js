@@ -24,15 +24,7 @@ export default function Hero({ data }) {
       return <VisualImageWithHeading data={data} />;
     default:
       return (
-        <div className={clsx(
-          'transition-all duration-1000',
-          {
-            'min-h-screen items-center ': isFull,
-          },
-          {
-            'text-center': isCentered,
-          },
-        )}>
+        <div className='transition-all duration-1000'>
 
           <Parallax
               bgImage={bgImage}
