@@ -127,7 +127,7 @@ blocks:
         photo:
           image: /img/gatsby.png
   - type: perks
-    variant: default
+    variant: gallery
     title: Gallery
     content: "Gallery View"
     columns:
