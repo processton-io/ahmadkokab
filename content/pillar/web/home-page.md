@@ -35,7 +35,7 @@ blocks:
             I will help you overcome your technical challenges..
           video: ""
           bg_settings:
-            variant: bg-image-parralax
+            variant: bg-image
             overlay: no-overlay
             bg_photo: /img/img20230526125201.jpg
             bg_color: "#0e0e1b"
