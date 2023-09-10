@@ -15,12 +15,11 @@
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
-		8000,
-		8001
+		8000
 	],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "yarn && yarn dev",
+	"postCreateCommand": "yarn",
 
 	// Configure tool-specific properties.
 	"customizations": {
