@@ -10,15 +10,6 @@ blocks:
     height: full
     heros:
       - hero:
-          variant: default
-          height: full
-          title: Hi, i'm
-          content: |-
-            # Ahmad Faryab Kokab 
-
-            #### **Creative developer** from **Pakistan**. 
-
-            I will help you overcome your technical challenges..
           buttons:
             - button:
                 variant: button
@@ -28,22 +19,34 @@ blocks:
                 variant: secondary
                 content: See my Blogs
                 url: /blogs
+          variant: with_user_avatar
+          height: full
           ratio: 6/6
           color_theme: dark
           photo:
-            image: /img/website-picture.jpg
+            image: /img/img20230526123902-removebg-preview.png
             alt: Logo
+          title: Hi, i'm
+          content: |-
+            # Ahmad Faryab Kokab 
+
+            #### **Creative developer** from **Pakistan**. 
+
+            I will help you overcome your technical challenges..
           video: ""
           bg_settings:
             variant: bg-image
             overlay: no-overlay
-            bg_photo: /img/green-tropical-leaves-border-png-3000x2400.png
+            bg_photo: /img/img20230526125201.jpg
             bg_color: "#0e0e1b"
             bg_video: https://player.vimeo.com/video/516255210?title=0&portrait=0&byline=0&autoplay=1&muted=true&controls=0&loop=1
     variant: default
-    title: Hi, i'm Ahmad Faryab Kokab 
+    title: Hi, i'm Ahmad Faryab Kokab
   - type: recentArticles
     title: Blogs
+    bg_settings:
+      variant: no-bg
+      overlay: no-overlay
 seo:
   ogimage: /img/website-picture.jpg
 ---
