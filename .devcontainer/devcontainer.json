@@ -19,7 +19,7 @@
 	],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "yarn install && yarn develop",
+	"postCreateCommand": "yarn && yarn dev",
 
 	// Configure tool-specific properties.
 	"customizations": {

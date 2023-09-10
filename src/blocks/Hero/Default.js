@@ -1,6 +1,7 @@
 
 import React from 'react'
 import Buttons from '../../components/UI/Buttons';
+import Text from '../../components/UI/Text';
 import Image from '../../resolvers/Image'
 import clsx from 'clsx';
 
@@ -20,7 +21,7 @@ export default function DefaultHero({ data }) {
             <div className="mx-auto flex px-5 py-24 flex-col items-center">
                 <div className="w-full  flex flex-col md:items-center mb-16 md:mb-0 items-center text-center">
                     {data?.title && (<h1 className={clsx({"title-font sm:text-4xl text-3xl mb-4 font-medium " : true , 'text-white': data.color_theme === 'white' , 'text-gray-900': data.color_theme === 'dark'})}>{data?.title}</h1>)}
-                    {data?.content && (<p className={clsx({"mb-8 leading-relaxed" : true , 'text-white': data.color_theme === 'white' , 'text-gray-500': data.color_theme === 'dark'})}>{data?.content}</p>)}
+                    {data?.content && (<Text className={clsx({"mb-8 leading-relaxed" : true , 'text-white': data.color_theme === 'white' , 'text-gray-500': data.color_theme === 'dark'})}>{data?.content}</Text>)}
                     {data?.buttons && (
                         <div className="flex justify-center">
                             <Buttons
