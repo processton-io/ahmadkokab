@@ -36,7 +36,7 @@ export default function WithUserAvatar({ data }) {
                                 src={data?.photo?.image}
                                 alt={data?.photo?.alt}
                                 objectFit='contain'
-                                className="w-full max-w-xs mx-auto object-contain"
+                                className="w-full max-w-xs mx-auto object-contain rounded-full"
                             />)}
                     </div>
                 )}
