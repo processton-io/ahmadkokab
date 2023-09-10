@@ -28,9 +28,9 @@ blocks:
             alt: Logo
           title: Hi, i'm
           content: |-
-            # Ahmad Faryab Kokab 
+            ## Ahmad Faryab Kokab 
 
-            #### **Creative developer** from **Pakistan**. 
+            Creative developer from Pakistan. 
 
             I will help you overcome your technical challenges..
           video: ""
