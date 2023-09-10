@@ -42,6 +42,8 @@ blocks:
             bg_video: https://player.vimeo.com/video/516255210?title=0&portrait=0&byline=0&autoplay=1&muted=true&controls=0&loop=1
     variant: default
     title: Hi, i'm Ahmad Faryab Kokab 
+  - type: recentArticles
+    title: Blogs
 seo:
   ogimage: /img/website-picture.jpg
 ---
