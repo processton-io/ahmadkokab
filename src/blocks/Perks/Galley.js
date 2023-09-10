@@ -12,7 +12,6 @@ export default function Galley({ data }) {
       images[index].push(data.columns[i]);
     }
   }
-  console.log(images)
   return (
           <>
             <div
@@ -20,7 +19,7 @@ export default function Galley({ data }) {
               {
                 data?.columns && (
                   <>
-                  <div class="grid gap-4">
+                  <div className="grid gap-4">
                     {images[0].map((col, i) => (
                       col?.photo?.image && (
                         <Image
@@ -31,7 +30,7 @@ export default function Galley({ data }) {
                         />
                       )))}
                   </div>
-                  <div class="grid gap-4">
+                  <div className="grid gap-4">
                     {images[1].map((col, i) => (
                       col?.photo?.image && (
                         <Image
@@ -42,7 +41,7 @@ export default function Galley({ data }) {
                         />
                       )))}
                   </div>
-                  <div class="grid gap-4">
+                  <div className="grid gap-4">
                     {images[2].map((col, i) => (
                       col?.photo?.image && (
                         <Image
@@ -53,7 +52,7 @@ export default function Galley({ data }) {
                         />
                       )))}
                   </div>
-                  <div class="grid gap-4">
+                  <div className="grid gap-4">
                     {images[3].map((col, i) => (
                       col?.photo?.image && (
                         <Image

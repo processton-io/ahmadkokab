@@ -1,24 +1,10 @@
 {
-  "nav": [
-    {
-      "name": "Home",
-      "permalink": "/",
-      "type": "default"
-    },
-    {
-      "name": "Blogs",
-      "permalink": "/blogs",
-      "type": "default"
-    },
-    {
-      "name": "Contact me",
-      "permalink": "/contact-me",
-      "type": "default"
-    }
-  ],
-  "title": "",
+  "nav": [],
+  "social_links": [],
+  "copyright": "2023",
+  "show_social_links": true,
+  "show_contact_links": true,
+  "title": "Ahmad Faryab Kokab",
   "content": "Creative developer from Pakistan",
-  "photo": {
-  },
-  "copyright": "2022-2023"
+  "contact_links": []
 }

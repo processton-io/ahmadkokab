@@ -1,5 +1,5 @@
 import navigationField from '../fields/navigation-field';
-import socialField from '../fields/social-field';
+import {SocialField, ContactsField} from '../fields/social-field';
 import { Title, Content, ImageField } from '../fields';
 
 const collection = {
@@ -8,33 +8,57 @@ const collection = {
   description: 'Settings for theme',
   files: [
     {
-      label: 'Main Navigation',
-      name: 'nav',
+      label: 'General',
+      name: 'general',
       file: 'src/settings/main.json',
       editor: {
         preview: false,
       },
       fields: [
         Title,
-        ImageField(), 
-        navigationField()],
+        ImageField()],
     },
     {
-      label: 'Social Links',
-      name: 'social_links',
-      file: 'src/settings/social_links.json',
+      label: 'Header Settings',
+      name: 'header',
+      file: 'src/settings/header.json',
       editor: {
-        preview: true,
+        preview: false,
       },
-      fields: [{
-        label: 'Enable Header',
-        name: 'show_above_header',
-        widget: 'boolean',
-        required: false,
-      },socialField()],
+      fields: [
+        Title,
+        ImageField(),
+        navigationField(),
+        {
+          label: 'Enable Dark Mode',
+          name: 'show_dark_mode',
+          widget: 'boolean',
+          required: true,
+        },
+        {
+          label: 'Enable Mini Bar on top - for socal and contact',
+          name: 'show_mini_bar',
+          widget: 'boolean',
+          required: false,
+        },
+        {
+          label: 'Enable Social Links',
+          name: 'show_social_links',
+          widget: 'boolean',
+          required: false,
+        },
+        SocialField('Social Links','social_links'),
+        {
+          label: 'Enable Contact Links',
+          name: 'show_contact_links',
+          widget: 'boolean',
+          required: false,
+        },
+        ContactsField('Contact Links','contact_links')
+      ],
     },
     {
-      label: 'Footer Navigation',
+      label: 'Footer Settings',
       name: 'footer',
       file: 'src/settings/footer.json',
       editor: {
@@ -42,9 +66,28 @@ const collection = {
       },
       fields: [
         Title,
-        Content,
-        ImageField(), 
-        navigationField()],
+        navigationField(),
+        {
+          label: 'Enable Social Links',
+          name: 'show_social_links',
+          widget: 'boolean',
+          required: false,
+        },
+        SocialField('Social Links','social_links'),
+        {
+          label: 'Enable Contact Links',
+          name: 'show_contact_links',
+          widget: 'boolean',
+          required: false,
+        },
+        ContactsField('Contact Links','contact_links'),
+        {
+          label: 'Copyright text',
+          name: 'copyright',
+          widget: 'text',
+          required: false,
+        },
+      ],
     },
     {
       label: 'Colors',

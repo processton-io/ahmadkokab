@@ -38,9 +38,9 @@ export default function Default({ data }) {
                     {col?.content && (
                       <>
                         <Text className={`mt-1 short_description h-8 text-xs`}>{col?.content}</Text>
-                        <div className='text-right'>
+                        {col?.permalink && (<div className='text-right'>
                           <GatsbyLink to={col?.permalink} className='text-sm'>read more ...</GatsbyLink>
-                        </div>
+                        </div>)}
                       </>
                     )}
                   </div>

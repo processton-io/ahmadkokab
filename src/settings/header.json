@@ -1,0 +1,67 @@
+{
+  "nav": [
+    {
+      "name": "Home",
+      "permalink": "/",
+      "type": "default"
+    },
+    {
+      "name": "Blogs",
+      "permalink": "/blogs",
+      "type": "default"
+    },
+    {
+      "name": "Contact me",
+      "permalink": "/contact-me",
+      "type": "default"
+    }
+  ],
+  "social_links": [
+    {
+      "permalink": "https://www.facebook.com/profile.php?id=100063864128494",
+      "platform": "facebook"
+    },
+    {
+      "permalink": "https://twitter.com/ahmadkokab",
+      "platform": "twitter"
+    },
+    {
+      "permalink": "https://www.linkedin.com/in/ahmad-faryab-27b9716a/",
+      "platform": "linkedin"
+    }
+  ],
+  "nav_old": [
+    {
+      "permalink": "https://www.youtube.com",
+      "platform": "youtube"
+    },
+    {
+      "permalink": "https://www.instagram.com",
+      "platform": "instagram"
+    }
+  ],
+  "show_social_links": true,
+  "show_dark_mode": false,
+  "show_mini_bar": true,
+  "photo": {
+    "image": "/img/edge-base-logo.png",
+    "alt": "edge-base-logo"
+  },
+  "show_contact_links": true,
+  "title": "AFK Ch.",
+  "content": "Creative developer from Pakistan",
+  "contact_links": [
+    {
+      "show_in_header": true,
+      "permalink": "ahmadkokab@gmail.com",
+      "platform": "email",
+      "show_in_footer": false
+    },
+    {
+      "show_in_header": true,
+      "permalink": "+92 331 4745155",
+      "platform": "phone",
+      "show_in_footer": false
+    }
+  ]
+}

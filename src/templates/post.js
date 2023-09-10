@@ -17,8 +17,6 @@ const Post = ({ data }) => {
     'thumbnail': bgImage,
     'date': data.post.frontmatter.date
   };
-
-  console.log(bgImage, data, object);
   return (
     <Layout nav={true}>
       <Blog data={object} />

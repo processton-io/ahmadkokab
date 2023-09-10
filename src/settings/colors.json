@@ -1,17 +1,17 @@
 {
   "header": {
-    "bg": "#FFFFFF",
-    "text_title_color": "#000000",
-    "text_sub_title_color": "#000000",
-    "text_default_color": "#000000",
-    "text_hover_color": "#AAAAAA",
-    "text_default_bg": "#FFFFFF",
-    "text_hover_bg": "#FFFFFF",
-    "social_bg": "#000000",
-    "social_text_default_color": "#FFFFFF",
     "social_text_hover_color": "#AAAAAA",
     "social_text_default_bg": "#000000",
-    "social_text_hover_bg": "#000000"
+    "bg": "#FFFFFF",
+    "social_text_default_color": "#FFFFFF",
+    "social_text_hover_bg": "#000000",
+    "text_title_color": "#000000",
+    "text_sub_title_color": "#000000",
+    "text_hover_color": "#AAAAAA",
+    "text_default_color": "#000000",
+    "text_default_bg": "#FFFFFF",
+    "social_bg": "#000000",
+    "text_hover_bg": "#FFFFFF"
   },
   "button": {
     "primary": {
@@ -23,7 +23,7 @@
       "hover_ring": "#000000"
     },
     "secondary": {
-      "bg": "#FFFFFF",
+      "bg": "#ff0202",
       "hover_bg": "#CCCCCC",
       "default_color": "#000000",
       "hover_color": "#000000",
@@ -31,7 +31,7 @@
       "hover_ring": "#000000"
     }
   },
-  "perks":{
+  "perks": {
     "title": "#000000",
     "subtitle": "#0C0C0C"
   }

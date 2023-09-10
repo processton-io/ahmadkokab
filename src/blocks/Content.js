@@ -1,23 +1,38 @@
 import React from 'react';
+import clsx from 'clsx';
+
 import Container from '../components/UI/Container';
 import Text from '../components/UI/Text';
-import { Parallax } from 'react-parallax';
 
 export default function Content({ data }) {
-  const bgImage = typeof data?.bg_photo?.bg_image === 'string' ? data?.bg_photo?.bg_image : data?.bg_photo?.bg_image?.childImageSharp?.gatsbyImageData?.images?.fallback?.src;
-  return (
-    <Parallax
-        bgImage={bgImage}
-        bgImageAlt={data?.bg_photo?.alt}
-        disabled={data?.bg_photo?.enable_parallax === true}
-    >
-      <section className='py-10 lg:py-16 bg-white bg-opacity-50'>
-        <Container>
-          {data?.content && (
-            <Text className='mx-auto w-full max-w-6xl'>{data?.content}</Text>
-          )}
-        </Container>
-      </section>
-    </Parallax>
-  );
+return (
+  <section className=' mt-5'>
+    <Container>
+      {data?.content && (
+        <Text className={ 
+          clsx({
+            "mx-auto w-full max-w-6xl": true,
+            "text-left": data.variant === 'left-hand',
+            "text-right": data.variant === 'right-hand',
+            "text-center": data.variant === "centered"
+            })}>{data?.content}</Text>
+      )}
+      {data.columns && (
+      <div className='flex flex-col md:flex-row mt-5 gap-5 max-w-6xl mx-auto'>
+          { data.columns.map((col) => {
+              return (
+                <Text className={ 
+                  clsx({
+                    "mx-auto flex-1 max-w-6xl": true,
+                    "text-left": data.variant === 'left-hand',
+                    "text-right": data.variant === 'right-hand',
+                    "text-center": data.variant === "centered"
+                    })}>{col?.content}</Text>
+              )
+          })}
+      </div>
+      )}
+    </Container>
+  </section>
+)
 }

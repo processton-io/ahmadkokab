@@ -10,7 +10,8 @@ const Page = ({ data }) => {
   
   return (
     <Layout nav={true}>
-      <PageBuilder blocks={data.page.frontmatter.blocks} />
+      
+      <PageBuilder frontmatter={data.page.frontmatter} />
     </Layout>
   )
 }
@@ -42,6 +43,12 @@ export const basicPageQuery = graphql`
       frontmatter {
         id
         title
+        breadcrumbs {
+          breadcrumb_item {
+            link
+            title
+          }
+        }
         ...Blocks
         ...Seo
       }

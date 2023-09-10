@@ -8,12 +8,17 @@ import ContentImage from '../blocks/ContentImage';
 import Perks from '../blocks/Perks';
 import Content from '../blocks/Content';
 import Form from '../blocks/Form';
+import WideSlider from '../blocks/WideSlider';
+import BreadCrumbs from './BreadCrumbs';
 
-export default function PageBuilder({ blocks, preview = false }) {
+export default function PageBuilder({ frontmatter, preview = false }) {
   return (
     <>
-      {blocks &&
-        blocks.map((block, i) => {
+      {frontmatter?.breadcrumbs && 
+        <BreadCrumbs breadcrumbs={frontmatter.breadcrumbs} />
+      }
+      {frontmatter?.blocks &&
+        frontmatter.blocks.map((block, i) => {
           
           switch (block.type) {
             case 'hero_slider':
@@ -21,7 +26,7 @@ export default function PageBuilder({ blocks, preview = false }) {
             case 'hero':
               return <Hero key={i} data={block} />;
             case 'recentArticles':
-              return <RecentArticles key={i} data={block} preview={preview} />;
+              return <RecentArticles key={i} identifier={`recent_article`+i} data={block} preview={preview} />;
             case 'content_image':
               return <ContentImage key={i} data={block} preview={preview} />;
             case 'perks':
@@ -30,6 +35,8 @@ export default function PageBuilder({ blocks, preview = false }) {
               return <Content key={i} data={block} preview={preview} />;
             case 'form':
               return <Form key={i} block={block} preview={preview} />;
+            case 'cards_slider':
+              return <WideSlider key={i} identifier={`wide_slider`+i} data={block} preview={preview} />
             default:
               return (
                 <div className='container mx-auto' key={i}>
@@ -52,25 +59,13 @@ export const query = graphql`
       content
       variant
       height
-      bg_photo {
-        bg_image {
-          childImageSharp {
-            gatsbyImageData(
-              width: 2480
-              quality: 72
-              placeholder: DOMINANT_COLOR
-              formats: [AUTO, WEBP, AVIF]
-            )
-          }
-        }
-      }
       photo {
         image {
           childImageSharp {
             gatsbyImageData(
               width: 800
               quality: 72
-              placeholder: DOMINANT_COLOR
+              placeholder: BLURRED
               formats: [AUTO, WEBP, AVIF]
             )
           }
@@ -89,7 +84,8 @@ export const query = graphql`
           title
           content
           variant
-          height
+          color_theme
+          ratio
           buttons {
             button {
               content
@@ -97,30 +93,36 @@ export const query = graphql`
               variant
             }
           }
-          hero_bg_photo {
-            hero_bg_image {
+          form
+          bg_settings {
+            variant
+            overlay
+            bg_color
+            bg_video
+            bg_photo {
               childImageSharp {
                 gatsbyImageData(
-                  width: 2480
-                  quality: 100
-                  placeholder: DOMINANT_COLOR
+                  width: 2048
+                  quality: 70
+                  placeholder: BLURRED
                   formats: [AUTO, WEBP, AVIF]
                 )
               }
             }
           }
-          hero_photo {
-            hero_image {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 800
-                  quality: 72
-                  placeholder: DOMINANT_COLOR
-                  formats: [AUTO, WEBP, AVIF]
-                )
+          photo{
+            image {
+                childImageSharp {
+                  gatsbyImageData(
+                    width: 400
+                    quality: 72
+                    placeholder: BLURRED
+                    formats: [AUTO, WEBP, AVIF]
+                  )
+                }
               }
-            }
           }
+          video
           columns {
             title
             content
@@ -130,7 +132,7 @@ export const query = graphql`
                     gatsbyImageData(
                       width: 150
                       quality: 72
-                      placeholder: DOMINANT_COLOR
+                      placeholder: BLURRED
                       formats: [AUTO, WEBP, AVIF]
                     )
                   }
@@ -142,13 +144,16 @@ export const query = graphql`
       columns {
         title
         content
+        variant
+        permalink
+        type
         photo{
           image {
               childImageSharp {
                 gatsbyImageData(
-                  width: 100
+                  width: 780
                   quality: 72
-                  placeholder: DOMINANT_COLOR
+                  placeholder: BLURRED
                   formats: [AUTO, WEBP, AVIF]
                 )
               }

@@ -52,7 +52,17 @@ module.exports = {
       },
       height: {
         'window': '100vh',
-        'screen': 'calc(100vh - 25vh)'
+        '80vh': '80vh',
+        '60vh': '60vh',
+        '40vh': '40vh',
+        '20vh': '20vh',
+      },
+      width: {
+        'window': '100vh',
+        '80vh': '80vh',
+        '60vh': '60vh',
+        '40vh': '40vh',
+        '20vh': '20vh',
       }
 
     },

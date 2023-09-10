@@ -23,18 +23,6 @@
       "permalink": "https://www.instagram.com/ahmadkokab/",
       "platform": "instagram",
       "show_in_footer": false
-    },
-    {
-      "show_in_header": true,
-      "permalink": "ahmadkokab@gmail.com",
-      "platform": "email",
-      "show_in_footer": false
-    },
-    {
-      "show_in_header": true,
-      "permalink": "+92 331 4745155",
-      "platform": "phone",
-      "show_in_footer": false
     }
   ],
   "show_above_header": true

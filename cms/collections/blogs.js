@@ -1,6 +1,6 @@
 import { PermalinkField } from '../fields/permalink-field';
 import seo from '../fields/seo';
-import { ID, ImageField, backgroundImageField } from '../fields';
+import { ID, ImageField, backgroundSettingsField } from '../fields';
 
 const collection = {
   name: 'blog',
@@ -9,7 +9,7 @@ const collection = {
     preview: true,
   },
   description: 'Blog posts collection',
-  folder: 'content/blog',
+  folder: 'content/blog/web',
   slug: '{{slug}}',
   summary:
     "{{title}} \r\n {{date | date('YYYY-MM-DD')}} \r\n {{body | truncate(70, '...')}}",
@@ -36,7 +36,7 @@ const collection = {
     },
     PermalinkField('blog'),
     ImageField(),
-    backgroundImageField(),
+    backgroundSettingsField(),
     {
       label: 'Date',
       name: 'date',

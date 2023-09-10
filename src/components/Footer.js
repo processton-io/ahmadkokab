@@ -10,16 +10,6 @@ export default function Footer() {
   return (
     <footer className="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-800">
       <div className="mx-auto max-w-screen-xl text-center">
-          {footer?.photo?.image && (
-            <GatsbyLink to="/" className="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white">
-              <Image
-                src={footer?.photo?.image}
-                alt={footer?.photo?.alt}
-                className="mr-3 h-6 sm:h-9 rounded-full"
-              />
-              {footer?.title && ( <p className="my-6 text-gray-500 dark:text-gray-400">{footer?.title}</p>)}
-            </GatsbyLink>
-          )}
           {footer?.content && ( <p className="my-6 text-gray-500 dark:text-gray-400">{footer?.content}</p>)}
           <ul className="flex flex-wrap justify-center items-center mb-6 text-gray-900 dark:text-white">
             {footer.nav && (
@@ -41,8 +31,7 @@ export default function Footer() {
             )}
           </ul>
           <ul className="flex justify-center mt-5 space-x-5">
-            {socialLinks?.social_links && (socialLinks?.social_links.map((link, i) => {
-                  if(link.show_in_footer === true){
+            { footer.show_social_links && footer?.social_links && (footer?.social_links.map((link, i) => {
                     switch (link.platform) {
                       case "facebook":
                         return (
@@ -77,9 +66,6 @@ export default function Footer() {
                       default:
                         return <></>
                     }
-                  }else{
-                    return <></>
-                  }
                 }))}
               
           </ul>

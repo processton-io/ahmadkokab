@@ -1,8 +1,8 @@
 ---
 id: 44d0d78e-1f11-4f92-85ac-d144d60bb573
 type: post
-layout: post
-title: Philosophy behind Edge Base.
+layout: null
+title: Introducing Edge Base.
 permalink: /blog/hello-world/
 thumbnail: /img/tezos-wpn1xnccgpw-unsplash.jpg
 photo:

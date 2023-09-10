@@ -1,4 +1,4 @@
-import { Buttons, Title, Content, VariantField, ImageField, Heros, backgroundImageField, HeightField } from '../fields';
+import { Buttons, Title, Content, VariantField, ImageField, Heros, backgroundSettingsField, HeightField, ColorTheme } from '../fields';
 
 
 const Config = {
@@ -7,17 +7,23 @@ const Config = {
   widget: 'list',
   types: [
     {
-      label: 'Hero',
-      name: 'hero',
-      widget: 'object',
-      summary: 'Hero {{fields.title}}',
+      label: 'Hero Slider',
+      name: 'hero_slider',
+      widget: 'list',
+      summary: 'Slider {{fields.title}}',
       fields: [
-        Title,
-        Buttons,
-        ImageField(),
-        backgroundImageField(),
-        VariantField('default', ['default', 'visual_image_with_heading', 'full']),
-        HeightField('full', ['auto', 'full', 'little_less', 'half']),
+        VariantField('default', ['default']),
+        HeightField('full'),
+        Heros,
+      ],
+    },
+    {
+      label: 'Content',
+      name: 'content',
+      widget: 'object',
+      summary: 'Content {{fields.content}}',
+      fields: [
+        VariantField('left-hand', ['left-hand','right-hand','centered']),
         Content,
         {
           label: 'Columns',
@@ -25,34 +31,43 @@ const Config = {
           widget: 'list',
           summary: '{{fields.title}}',
           fields: [
-            Title,
-            ImageField()
+            Content,
           ],
-        },
+        }
       ],
     },
     {
-      label: 'Slider',
-      name: 'hero_slider',
-      widget: 'list',
-      summary: 'Slider {{fields.title}}',
-      fields: [
-        Title,
-        Heros,
-        VariantField('default', ['default']),
-        HeightField('default', ['auto', 'full', 'little_less', 'half'])
-      ],
-    },
-    {
-      label: 'Content',
-      name: 'content',
+      label: 'Cards Slider',
+      name: 'cards_slider',
       widget: 'object',
-      summary: 'Content {{fields.title}}',
+      summary: 'Slide {{fields.title}}',
       fields: [
         Title,
-        Content, 
-        VariantField('left-hand', ['left-hand','right-hand','centered']),
-        backgroundImageField()
+        VariantField('wide', ['wide', 'narrow']),
+        {
+          label: 'Cards',
+          name: 'columns',
+          widget: 'list',
+          summary: '{{fields.title}}',
+          fields: [
+            Title,
+            {
+              label: 'Type',
+              name: 'type',
+              widget: 'string',
+              required: false,
+            },
+            {
+              label: 'Permalink',
+              name: 'permalink',
+              widget: 'string',
+              required: false,
+            },
+            Content,
+            VariantField('bg_image', ['bg_image', 'image_above']),
+            ImageField(),
+          ],
+        }
       ],
     },
     {
@@ -65,7 +80,7 @@ const Config = {
         Content,
         Buttons,
         ImageField(),
-        backgroundImageField(),
+        backgroundSettingsField(),
         VariantField('default', ['default', 'reversed']),
       ],
     },
@@ -78,7 +93,7 @@ const Config = {
         Title,
         VariantField('default', ['default', 'cards', 'gallery']),
         Content,
-        backgroundImageField(),
+        backgroundSettingsField(),
         {
           label: 'Columns',
           name: 'columns',
@@ -108,7 +123,26 @@ const Config = {
       label: 'Recent Articles',
       name: 'recentArticles',
       widget: 'object',
-      fields: [Title, backgroundImageField()],
+      fields: [Title, backgroundSettingsField()],
+    },
+    {
+      label: 'Empty Space',
+      name: 'empty_space',
+      widget: 'object',
+      summary: 'Content {{fields.variant}}',
+      fields: [
+        VariantField('50px', ['50px','75px','100px','125px','150px','175px','200px','225px','250px']),
+      ],
+    },
+    {
+      label: 'Heading',
+      name: 'heading',
+      widget: 'object',
+      summary: 'Content {{fields.variant}}: {{fields.title}}',
+      fields: [
+        Title,
+        VariantField('h1', ['h1','h2','h3','h4','h5','h6']),
+      ],
     },
     {
       label: 'Form',
@@ -117,7 +151,7 @@ const Config = {
       fields: [
         Title,
         Content,
-        backgroundImageField(),
+        backgroundSettingsField(),
         ImageField(),
         {
           label: 'Form',

@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import React, { useState } from 'react'
 import { Link as GatsbyLink } from 'gatsby'
-import nav from '../settings/main.json'
+import nav from '../settings/header.json'
 import socialLinks from '../settings/social_links.json'
 import Image from '../resolvers/Image'
 
@@ -15,42 +15,37 @@ export default function Header() {
   }
   return (
       <header>
-        {socialLinks?.show_above_header === true && (
+        {nav?.show_mini_bar === true && (
           <nav className="bg-headerSocialBg text-headerSocialTextDefaultColor border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 shadow">
             <div className="flex flex-wrap space-y-2 xl:space-y-0 justify-between items-center mx-auto max-w-screen-xl">
               <div className='flex flex-col md:flex-row space-y-3 space-x-0 md:space-y-0 md:space-x-3 '>
-                {socialLinks?.social_links && (socialLinks?.social_links.map((link, i) => {
-                  if(link.show_in_header === true){
-                    switch (link.platform) {
-                      case "email":
-                        return (
-                          <a className='space-x-2 flex h-6 text-headerSocialTextDefaultColor hover:text-headerSocialTextHoverColor bg-headerSocialTextDefaultBG hover:bg-headerSocialTextHoverBG' href={`mailto:`+link.permalink} key={`social-menue-social-text`+i}>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-mail mr-2 w-4 "><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                            {link.permalink}</a>
-                        );
-                      case "phone":
-                        return (
-                          <a className='space-x-2 flex h-6 text-headerSocialTextDefaultColor hover:text-headerSocialTextHoverColor bg-headerSocialTextDefaultBG hover:bg-headerSocialTextHoverBG' href={`tel:`+link.permalink} key={`social-menue-social-text`+i}>
-                            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-phone mr-2 w-4 "><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                            {link.permalink}</a>
-                        );
-                      case "calendar":
-                        return (
-                          <a className='space-x-2 flex h-6 text-headerSocialTextDefaultColor hover:text-headerSocialTextHoverColor bg-headerSocialTextDefaultBG hover:bg-headerSocialTextHoverBG' href={link.permalink} key={`social-menue-social-text`+i}>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-calendar mr-2 w-4 "><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                            {link.permalink}</a>
-                        );
-                      default:
-                        return <></>
-                    }
-                  }else{
-                    return <></>
+                {nav?.show_contact_links && nav?.contact_links && (nav?.contact_links.map((link, i) => {
+                  switch (link.platform) {
+                    case "email":
+                      return (
+                        <a className='space-x-2 flex h-6 text-headerSocialTextDefaultColor hover:text-headerSocialTextHoverColor bg-headerSocialTextDefaultBG hover:bg-headerSocialTextHoverBG' href={`mailto:`+link.permalink} key={`social-menue-social-text`+i}>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-mail mr-2 w-4 "><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                          {link.permalink}</a>
+                      );
+                    case "phone":
+                      return (
+                        <a className='space-x-2 flex h-6 text-headerSocialTextDefaultColor hover:text-headerSocialTextHoverColor bg-headerSocialTextDefaultBG hover:bg-headerSocialTextHoverBG' href={`tel:`+link.permalink} key={`social-menue-social-text`+i}>
+                          <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-phone mr-2 w-4 "><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                          {link.permalink}</a>
+                      );
+                    case "calendar":
+                      return (
+                        <a className='space-x-2 flex h-6 text-headerSocialTextDefaultColor hover:text-headerSocialTextHoverColor bg-headerSocialTextDefaultBG hover:bg-headerSocialTextHoverBG' href={link.permalink} key={`social-menue-social-text`+i}>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-calendar mr-2 w-4 "><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                          {link.permalink}</a>
+                      );
+                    default:
+                      return <></>
                   }
                 }))}
               </div>
               <div className='flex flex-row lg:flex-row-reverse'>
-                {socialLinks?.social_links && (socialLinks?.social_links.map((link, i) => {
-                  if(link.show_in_header === true){
+                {nav?.show_social_links && nav?.social_links && (nav?.social_links.map((link, i) => {
                     switch (link.platform) {
                       case "facebook":
                         return (
@@ -85,9 +80,6 @@ export default function Header() {
                       default:
                         return <></>
                     }
-                  }else{
-                    return <></>
-                  }
                 }))}
               </div>
             </div>
