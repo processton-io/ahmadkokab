@@ -24,7 +24,7 @@ blocks:
           ratio: 6/6
           color_theme: dark
           photo:
-            image: /img/img20230526123902-removebg-preview.png
+            image: /img/ahmad-faryab-kokab-square.png
             alt: Logo
           title: Hi, i'm
           content: |-
@@ -35,7 +35,7 @@ blocks:
             I will help you overcome your technical challenges..
           video: ""
           bg_settings:
-            variant: bg-image
+            variant: bg-image-parralax
             overlay: no-overlay
             bg_photo: /img/img20230526125201.jpg
             bg_color: "#0e0e1b"
