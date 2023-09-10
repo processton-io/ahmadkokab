@@ -22,7 +22,7 @@ const config = {
     local_backend: true,
     backend: {
       name: 'git-gateway',
-      branch: 'prod',
+      branch: 'main',
     },
     slug: {
       encoding: 'ascii',
