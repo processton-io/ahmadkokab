@@ -6,7 +6,7 @@ export default function Text({ children, className, ...props }) {
 
   const generateLinkTarget = (link) => {
     console.log(generateLinkTarget)
-    return link.startsWith(process.env.GATSBY_APP_URL) ? "_self" : "_blank"
+    return link.startsWith(process.env.GATSBY_WEB_URL) || link.startsWith("/") ? "_self" : "_blank"
   }
   return (
     <ReactMarkdown
