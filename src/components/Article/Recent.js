@@ -236,7 +236,7 @@ export default function Recent({ identifier, title, settings, widerContainer, ..
       className={clsx("paragraph proc-wslider w-full px-0 overflow-hidden py-16 bg-white", {
         [`${identifier}`]: true,
       })} style={{
-        backgroundColor: `${settings.bg_color}`
+        backgroundColor: `${settings?.bg_color}`
       }}>
       <div className={(widerContainer ? 'wider-title' : 'wide-title') + ' pb-16'}>
         <h3 className='text-5xl md:text-4xl px-6 lg:px-6 xl:px-0 font-bold text-black'>{sliderTitle}</h3>
