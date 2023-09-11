@@ -153,7 +153,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-netlify`,
       options: {
-        mergeLinkHeaders: false,
         mergeCachingHeaders: false
       },
     }
