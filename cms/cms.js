@@ -7,6 +7,8 @@ import pages from './collections/pages';
 import theme_docs from './collections/theme_docs';
 import pillar from './collections/pillar';
 import blogs from './collections/blogs';
+import stories from './collections/stories';
+import tips from './collections/tips';
 import authors from './collections/authors';
 import settings from './collections/settings';
 import PagePreview from './previews/Page';
@@ -30,7 +32,7 @@ const config = {
     },
     media_folder: '/static/img',
     public_folder: '/img',
-    collections: [ pillar, pages, blogs, forms,authors, settings, theme_docs],
+    collections: [ pillar, pages, blogs, stories, tips, forms,authors, settings, theme_docs],
   },
 };
 
@@ -38,6 +40,8 @@ CMS.registerPreviewStyle('../commons.css');
 CMS.registerPreviewTemplate('pillar', PillarPreview);
 CMS.registerPreviewTemplate('pages', PagePreview);
 CMS.registerPreviewTemplate('blog', BlogPreview);
+CMS.registerPreviewTemplate('story', BlogPreview);
+CMS.registerPreviewTemplate('tip', BlogPreview);
 CMS.registerPreviewTemplate('theme_docs', PagePreview);
 
 CMS.registerWidget(UuidWidget);

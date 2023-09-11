@@ -36,7 +36,6 @@ const collection = {
     },
     PermalinkField('blog'),
     ImageField(),
-    backgroundSettingsField(),
     {
       label: 'Date',
       name: 'date',

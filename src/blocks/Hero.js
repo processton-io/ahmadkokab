@@ -37,7 +37,7 @@ export default function Hero({ data,  height }) {
       )
     case 'bg-image':
       return (
-        <div className='bg-cover bg-no-repeat bg-center' style={ {backgroundImage: `url(`+bgImage?.fluid?.src+`)`}}>
+        <div className='bg-cover bg-no-repeat bg-bottom' style={ {backgroundImage: `url(`+bgImage?.fluid?.src+`)`}}>
           <div className={ clsx({ 'bg-opacity-20':true, 'bg-white' : data.bg_settings.overlay === 'white', 'bg-black' : data.bg_settings.overlay === 'dark' })}>
             <HeroGenerator data={data} />
           </div>

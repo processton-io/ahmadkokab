@@ -1,16 +1,16 @@
 {
   "header": {
-    "social_text_hover_color": "#AAAAAA",
-    "social_text_default_bg": "#000000",
+    "social_text_hover_color": "#111827",
+    "social_text_default_bg": "#2289e9",
     "bg": "#FFFFFF",
     "social_text_default_color": "#FFFFFF",
-    "social_text_hover_bg": "#000000",
+    "social_text_hover_bg": "#2289e9",
     "text_title_color": "#000000",
     "text_sub_title_color": "#000000",
     "text_hover_color": "#AAAAAA",
     "text_default_color": "#000000",
     "text_default_bg": "#FFFFFF",
-    "social_bg": "#000000",
+    "social_bg": "#2289e9",
     "text_hover_bg": "#FFFFFF"
   },
   "button": {
@@ -23,7 +23,7 @@
       "hover_ring": "#000000"
     },
     "secondary": {
-      "bg": "#ff0202",
+      "bg": "#ffffff",
       "hover_bg": "#CCCCCC",
       "default_color": "#000000",
       "hover_color": "#000000",

@@ -30,6 +30,8 @@
       "platform": "linkedin"
     }
   ],
+  "show_social_links": true,
+  "show_dark_mode": false,
   "nav_old": [
     {
       "permalink": "https://www.youtube.com",
@@ -40,15 +42,13 @@
       "platform": "instagram"
     }
   ],
-  "show_social_links": true,
-  "show_dark_mode": false,
   "show_mini_bar": true,
   "photo": {
-    "image": "/img/edge-base-logo.png",
-    "alt": "edge-base-logo"
+    "image": "/img/afk_logo-removebg.png",
+    "alt": "afk-ch"
   },
   "show_contact_links": true,
-  "title": "AFK Ch.",
+  "title": "",
   "content": "Creative developer from Pakistan",
   "contact_links": [
     {

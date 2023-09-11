@@ -10,34 +10,34 @@ import Content from '../blocks/Content';
 import Form from '../blocks/Form';
 import WideSlider from '../blocks/WideSlider';
 
-export default function PillarBuilder({ blocks, preview = false }) {
+export default function PillarBuilder({ pillars, preview = false }) {
   return (
     <>
-      {blocks &&
-        blocks.map((block, i) => {
+      {pillars &&
+        pillars.map((pillar, i) => {
           
-          switch (block.type) {
+          switch (pillar.type) {
             case 'hero_slider':
-              return <Heros key={i} data={block} />;
+              return <Heros key={i} data={pillar} />;
             case 'hero':
-              return <Hero key={i} data={block} />;
+              return <Hero key={i} data={pillar} />;
             case 'recentArticles':
-              return <RecentArticles key={i} identifier={`recent_article`+i} data={block} preview={preview} />;
+              return <RecentArticles key={i} identifier={`recent_article`+i} data={pillar} preview={preview} />;
             case 'content_image':
-              return <ContentImage key={i} data={block} preview={preview} />;
+              return <ContentImage key={i} data={pillar} preview={preview} />;
             case 'perks':
-              return <Perks key={i} data={block} preview={preview} />;
+              return <Perks key={i} data={pillar} preview={preview} />;
             case 'content':
-              return <Content key={i} data={block} preview={preview} />;
+              return <Content key={i} data={pillar} preview={preview} />;
             case 'form':
-              return <Form key={i} block={block} preview={preview} />;
+              return <Form key={i} block={pillar} preview={preview} />;
             case 'cards_slider':
-              return <WideSlider key={i} identifier={`wide_slider`+i} data={block} preview={preview} />
+              return <WideSlider key={i} identifier={`wide_slider`+i} data={pillar} preview={preview} />
             default:
               return (
                 <div className='container mx-auto' key={i}>
                   <div className='text-center'>
-                    Missing Section {block.type}
+                    Missing Section {pillar.type}
                   </div>
                 </div>
               );
@@ -48,8 +48,8 @@ export default function PillarBuilder({ blocks, preview = false }) {
 }
 
 export const query = graphql`
-  fragment Blocks on MarkdownRemarkFrontmatter {
-    blocks {
+  fragment Pillars on MarkdownRemarkFrontmatter {
+    pillars: blocks {
       type
       title
       content
@@ -66,6 +66,12 @@ export const query = graphql`
             )
           }
         }
+      }
+      bg_settings {
+        variant
+        overlay
+        bg_color
+        bg_video
       }
       buttons {
         button {

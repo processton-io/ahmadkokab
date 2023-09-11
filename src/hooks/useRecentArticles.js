@@ -19,6 +19,7 @@ export const useRecentArticles = () => {
               }
               frontmatter {
                 title
+                permalink
                 date(formatString: "MMMM DD, YYYY")
                 author
                 photo {

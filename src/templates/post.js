@@ -8,14 +8,15 @@ import Blog from '../../src/components/Blog';
 
 const Post = ({ data }) => {
   
-  const bgImage =   typeof data.post.frontmatter?.bg_photo === 'string' ? data.post.frontmatter?.bg_photo : data.post.frontmatter?.bg_photo?.bg_image?.childImageSharp?.gatsbyImageData?.images?.fallback?.src
+  const bgImage =   typeof data.post.frontmatter?.photo === 'string' ? data.post.frontmatter?.photo : data.post.frontmatter?.photo?.image?.childImageSharp?.gatsbyImageData?.images?.fallback?.src
    
   const object = {
     'title': data.post.frontmatter.title,
     'excerpt' : data.post.frontmatter.excerpt,
     'body' : data.post.rawMarkdownBody,
     'thumbnail': bgImage,
-    'date': data.post.frontmatter.date
+    'date': data.post.frontmatter.date,
+    'showTime': false
   };
   return (
     <Layout nav={true}>
@@ -54,18 +55,7 @@ export const basicPageQuery = graphql`
         excerpt
         type
         date
-        bg_photo {
-          bg_image {
-            childImageSharp {
-              gatsbyImageData(
-                width: 2480
-                quality: 72
-                placeholder: DOMINANT_COLOR
-                formats: [AUTO, WEBP, AVIF]
-              )
-            }
-          }
-        }
+        permalink
         photo {
           image {
             childImageSharp {

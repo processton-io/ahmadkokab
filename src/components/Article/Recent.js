@@ -21,9 +21,9 @@ function NextArrow(props) {
       onMouseLeave={() => setIsHovered(false)}
     >
       {isHovered ?
-        <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="23.5" cy="23.5" r="23.5" fill="#BEBEBE"></circle><path d="M20 14L30 24L20 34" stroke="#5A5A5A" strokeWidth="2"></path></svg>
+        <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="23.5" cy="23.5" r="23.5" fill="transparent"></circle><path d="M20 14L30 24L20 34" stroke="#FFFFFF" strokeWidth="2"></path></svg>
         :
-        <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="23.5" cy="23.5" r="23.5" fill="#F7F7F7" /><path d="M20 14L30 24L20 34" stroke="#5A5A5A" strokeWidth="2" /></svg>
+        <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="23.5" cy="23.5" r="23.5" fill="transparent" /><path d="M20 14L30 24L20 34" stroke="#2289e9" strokeWidth="2" /></svg>
       }
     </div>
   );
@@ -34,7 +34,7 @@ function PrevArrow(props) {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div
-      className={"rounded-full hidden lg:block z-40 wslick-arrow prev bg-gray " + className}
+      className={"rounded-full hidden lg:block z-40 wslick-arrow prev  " + className}
       style={{ ...style }}
       onClick={onClick}
       onKeyDown={onClick}
@@ -43,9 +43,9 @@ function PrevArrow(props) {
       onMouseLeave={() => setIsHovered(false)}
     >
       {isHovered ?
-        <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg"><circle r="23.5" transform="matrix(-1 0 0 1 23.5 23.5)" fill="#BEBEBE"></circle><path d="M27 14L17 24L27 34" stroke="#5A5A5A" strokeWidth="2"></path></svg>
+        <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg"><circle r="23.5" transform="matrix(-1 0 0 1 23.5 23.5)" fill="transparent"></circle><path d="M27 14L17 24L27 34" stroke="#FFFFFF" strokeWidth="2"></path></svg>
         :
-        <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg"><circle r="23.5" transform="matrix(-1 0 0 1 23.5 23.5)" fill="#F7F7F7" /><path d="M27 14L17 24L27 34" stroke="#5A5A5A" strokeWidth="2" /></svg>
+        <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg"><circle r="23.5" transform="matrix(-1 0 0 1 23.5 23.5)" fill="transparent" /><path d="M27 14L17 24L27 34" stroke="#2289e9" strokeWidth="2" /></svg>
       }
     </div>
   );
@@ -54,9 +54,11 @@ function PrevArrow(props) {
 /**
  * Component
  */
-export default function Recent({ identifier, title, widerContainer, ...props }) {
+export default function Recent({ identifier, title, settings, widerContainer, ...props }) {
   
   const posts = useRecentArticles();
+
+  
 
   let temporaryWidth = 550;
 
@@ -231,15 +233,17 @@ export default function Recent({ identifier, title, widerContainer, ...props }) 
   return (
     <div
       id={identifier}
-      className={clsx("paragraph proc-wslider w-full px-0 overflow-hidden py-16 bg-gray-100", {
+      className={clsx("paragraph proc-wslider w-full px-0 overflow-hidden py-16 bg-white", {
         [`${identifier}`]: true,
-      })}>
+      })} style={{
+        backgroundColor: `${settings.bg_color}`
+      }}>
       <div className={(widerContainer ? 'wider-title' : 'wide-title') + ' pb-16'}>
         <h3 className='text-5xl md:text-4xl px-6 lg:px-6 xl:px-0 font-bold text-black'>{sliderTitle}</h3>
       </div>
       <div className={'wslick-wslider wslick-initialized overflow-auto lg:overflow-hidden'}>
         {currentSlide > 0 ?
-          <PrevArrow onClick={previousClick} />
+          <PrevArrow onClick={previousClick} className="bg-brandLight hover:bg-brand" />
           : ''}
         <div className={(widerContainer ? 'wslick-list wslick-list-wider' : 'wslick-list') + ' pb-16'} style={{
           width: `${slides.length * (slideWidth + 250 + (slideWidth / (widerContainer ? 4 : 8)))}px`,
@@ -249,7 +253,6 @@ export default function Recent({ identifier, title, widerContainer, ...props }) 
             transform: `translate3d(${xAxis}px, 0px, 0px)`,
           }} >
             {slides.map((slide, index) => {
-              
               if (slide === undefined || !slide.node) return ('')
               let thumbnail = [];
               let thumbnailUrl = '';
@@ -258,9 +261,8 @@ export default function Recent({ identifier, title, widerContainer, ...props }) 
               let entityType = 'Blog';
               let title = '';
               let linkText = '';
-              
-              if (slide.node && slide.node.fields && slide.node.fields.slug) {
-                path = slide.node.fields.slug;
+              if (slide.node && slide.node.frontmatter && slide.node.frontmatter.permalink) {
+                path = slide.node.frontmatter.permalink;
               }
               if (slide.node.frontmatter && slide.node.frontmatter.photo) {
                 let image = getImage(slide.node.frontmatter.photo.image);
@@ -281,15 +283,17 @@ export default function Recent({ identifier, title, widerContainer, ...props }) 
                 title = slide.node.frontmatter.title;
               }
               linkText = `Read the ` + entityType.replace('_', ' ');
-              SlideTheme = index % 2 ==0 ? "bg_image" : "card"
+              SlideTheme = index % 2 ==0 ? "card" : "bg_image"
               if(SlideTheme === "bg_image"){
                 return (
-                  <div className='wslick-slide wslick-active wslick-current bg-white mr-0 md:mr-8 lg:mr-16 ml-6 md:ml-6 lg:ml-6 xl:ml-0 bg-cover bg-no-repeat' key={index} ref={ref} style={{ width: slideWidth, height: 'auto', minHeight: containerHeight, backgroundImage: `url(`+thumbnailUrl+`)` }}>
-                    <span className={"flex flex-col p-0 w-full "}>
-                      <div className='p-10 pb-16'>
+                  <div className='wslick-slide wslick-active wslick-current border border-white md:border-0 bg-gray-700 mr-0 md:mr-8 lg:mr-16 ml-6 md:ml-6 lg:ml-6 xl:ml-0 bg-cover bg-no-repeat' key={index} ref={ref} style={{ width: slideWidth, height: 'auto', minHeight: containerHeight, backgroundImage: `url(`+thumbnailUrl+`)` }}>
+                    <span className={"flex flex-1 h-full flex-col justify-between p-0 bg-black bg-opacity-30"} style={{ width: slideWidth, height: 'auto', minHeight: containerHeight }}>
+                      <div className='p-8 md:p-10 flex-1'>
                         <p className='text-white text-2xl mb-8 py-3 capitalize'>{entityType.replace('_', ' ')}</p>
-                        <h4 className="mb-12 text-5xl text-white font-bold">{title}</h4>
-                        <div className="mb-12 text-2xl text-white">{description}</div>
+                        <h4 className="mb-12 text-4xl text-white font-bold break-words">{title}</h4>
+                        <div className="mb-12 text-2xl text-white break-words">{description}</div>
+                      </div>
+                      <div className='px-8 md:px-10 pb-8 md:pb-8 inline-flex align-bottom'>
                         <Link to={(path)} className="mb-5 text-proc-red font-bold text-2xl inline-block text-white">{linkText}</Link>
                       </div>
                     </span>
@@ -298,15 +302,19 @@ export default function Recent({ identifier, title, widerContainer, ...props }) 
               }else{
                 return (
                   <div className='wslick-slide wslick-active wslick-current bg-white mr-0 md:mr-8 lg:mr-16 ml-6 md:ml-6 lg:ml-6 xl:ml-0' key={index} ref={ref} style={{ width: slideWidth, height: 'auto', minHeight: containerHeight }}>
-                    <span className="flex flex-col p-0">
+                    <span className={"flex flex-1 h-full flex-col justify-between p-0 bg-gray-400 bg-opacity-20"} style={{ width: slideWidth, height: 'auto', minHeight: containerHeight }}>
                       {thumbnailUrl ? (
                         <Image src={thumbnailUrl} className="max-h-96 object-cover overflow-hidden w-full" alt={thumbnail.alt} title={thumbnail.title} />
                       ) : ('')}
-                      <div className='p-10 pb-16'>
-                        <p className='text-grey text-2xl mb-2 py-3 capitalize'>{entityType.replace('_', ' ')}</p>
-                        <h4 className="mb-12 text-5xl font-bold">{title}</h4>
-                        <div className="mb-12 text-2xl">{(description)}</div>
-                        <Link to={(path)} className="mb-5 text-proc-red font-bold text-2xl inline-block">{linkText}</Link>
+                      <div className='border border-gray-300 flex flex-1 h-full flex-col justify-between'>
+                        <div className='p-8 md:p-8 flex-1'>
+                          <p className='text-grey text-2xl mb-2 py-3 capitalize'>{entityType.replace('_', ' ')}</p>
+                          <h4 className="mb-6 text-4xl font-bold break-words">{title}</h4>
+                          <div className="text-2xl break-words">{(description)}</div>
+                        </div>
+                        <div className='px-8 md:px-10 pb-8 md:pb-8 inline-flex align-bottom'>
+                          <Link to={(path)} className="mb-5 text-proc-red font-bold text-2xl inline-block">{linkText}</Link>
+                        </div>
                       </div>
                     </span>
                   </div>
@@ -317,7 +325,7 @@ export default function Recent({ identifier, title, widerContainer, ...props }) 
           </div>
         </div>
         {currentSlide < (slides.length - 1) ?
-          <NextArrow onClick={nextClick} />
+          <NextArrow onClick={nextClick} className="bg-brandLight hover:bg-brand" />
           : ''}
       </div>
       <div className={(widerContainer ? 'wider-title' : 'wide-title') + ( haveBullets ? ' have-bullets ' : ' hidden ' ) + ''}>
@@ -325,7 +333,7 @@ export default function Recent({ identifier, title, widerContainer, ...props }) 
           {slides.map((slide, index) => {
           
               return (
-                <li key={`li-`+index} onClick={() => dotClick(index)} className={index + ' inline-block w-4 h-4 rounded-full p-0 mr-4 ' + (currentSlide === index ? ' bg-gray-400' : ' bg-gray-300')} ></li>
+                <li key={`li-`+index} onClick={() => dotClick(index)} className={index + ' cursor-pointer inline-block w-4 h-4 rounded-full p-0 mr-4 ' + (currentSlide === index ? ' bg-brand' : ' bg-brandLight border border-brand')} ></li>
               )
           
           })}

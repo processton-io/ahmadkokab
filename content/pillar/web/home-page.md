@@ -19,25 +19,27 @@ blocks:
                 variant: secondary
                 content: See my Blogs
                 url: /blogs
-          variant: with_user_avatar
+          variant: default
           height: full
-          ratio: 6/6
+          ratio: 10/2
           color_theme: dark
           photo:
-            image: /img/ahmad-faryab-kokab-square.png
+            image: ""
             alt: Logo
-          title: Hi, i'm
+          title: ""
           content: |-
-            ## Ahmad Faryab Kokab 
+            ## Hi, i'm
 
-            Creative developer from Pakistan. 
+            # Ahmad Faryab Kokab
 
-            I will help you overcome your technical challenges..
+            ### Creative developer from Pakistan. 
+
+            #### I will help you overcome your technical challenges..
           video: ""
           bg_settings:
             variant: bg-image
             overlay: no-overlay
-            bg_photo: /img/img20230526125201.jpg
+            bg_photo: /img/cloud-bg.png
             bg_color: "#0e0e1b"
             bg_video: https://player.vimeo.com/video/516255210?title=0&portrait=0&byline=0&autoplay=1&muted=true&controls=0&loop=1
     variant: default
@@ -45,8 +47,11 @@ blocks:
   - type: recentArticles
     title: Blogs
     bg_settings:
-      variant: no-bg
+      variant: bg-color
       overlay: no-overlay
+      bg_color: "#ddedfc"
+      bg_photo: /img/cloud-bg.png
+      bg_video: https://player.vimeo.com/video/516255210?title=0&portrait=0&byline=0&autoplay=1&muted=true&controls=0&loop=1
 seo:
   ogimage: /img/website-picture.jpg
 ---

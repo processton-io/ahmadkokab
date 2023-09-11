@@ -6,7 +6,7 @@ import Text from '../components/UI/Text'
 import { Link as GatsbyLink } from 'gatsby'
 
 export default function Blog(data) {
-    
+    console.log(data    )
     return (
         <>
             <div className='bg-cover bg-center p-2' style={{backgroundImage: `url(`+data?.data?.thumbnail+`)`}}>
@@ -37,9 +37,11 @@ export default function Blog(data) {
                             </ol>
                         </nav>
                     </div>
-                    <div className='flex-shrink'>
-                        <p className='p-2 md:p-12 font-medium text-white text-right'>{moment(data.data.date).format("MMM Do YYYY")}</p>
-                    </div>
+                    { data?.data?.showTime && data?.data?.showTime === true && 
+                        <div className='flex-shrink'>
+                            <p className='p-2 md:p-12 font-medium text-white text-right'>{moment(data.data.date).format("MMM Do YYYY")}</p>
+                        </div>
+                    }
                 </div>
             </div>
             <main className="pt-2 md:pt-8 pb-16 lg:pt-8 lg:pb-24 bg-white dark:bg-gray-900 -mt-10 md:-mt-36 max-w-3xl mx-6 md:mx-auto rounded-md" >

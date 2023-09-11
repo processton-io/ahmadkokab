@@ -5,7 +5,7 @@ import { PermalinkField } from '../fields/permalink-field';
 
 const collection = {
   name: 'pages',
-  label: 'Page',
+  label: 'Pages',
   description: 'Pages for your website',
   folder: 'content/pages/web',
   create: true,
