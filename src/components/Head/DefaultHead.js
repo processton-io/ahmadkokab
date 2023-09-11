@@ -86,7 +86,7 @@ export default function DefaultHead({ data, children }) {
         rel="icon"
         type="image/png"
         sizes="192x192"
-        href="/img/favicons/android-icon-192x192.png"
+        href="/img/favicons/android-chrome-192x192.pn g"
       />
       <link
         rel="icon"
@@ -106,10 +106,10 @@ export default function DefaultHead({ data, children }) {
         sizes="16x16"
         href="/img/favicons/favicon-16x16.png"
       />
-      <meta
+      {/* <meta
         name="msapplication-TileImage"
         content="/img/favicons/ms-icon-144x144.png"
-      />
+      /> */}
     </>
   )
 }

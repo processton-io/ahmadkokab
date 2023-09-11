@@ -11,11 +11,11 @@ export default function DefaultHero({ data }) {
         <section  className={ 
           clsx({
             "body-font flex place-content-center items-center ": true, 
-            "h-screen": data.height === 'full', 
-            "h-80vh": data.height === '80vh', 
-            "h-60vh": data.height === '60vh', 
-            "h-40vh": data.height === '40vh', 
-            "h-20vh": data.height === '20vh', 
+            "min-h-screen": data.height === 'full', 
+            "min-h-80vh": data.height === '80vh', 
+            "min-h-60vh": data.height === '60vh', 
+            "min-h-40vh": data.height === '40vh', 
+            "min-h-20vh": data.height === '20vh', 
             "h-auto": data.height === 'auto'
             })}>
             <div className="mx-auto flex px-5 py-24 flex-col items-center w-full">

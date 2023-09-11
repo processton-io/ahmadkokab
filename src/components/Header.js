@@ -85,14 +85,14 @@ export default function Header() {
             </div>
           </nav>
         )}
-        <nav className="bg-header-bg bg-headerBg text-headerTextDefaultColor border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 shadow">
+        <nav className="bg-header-bg bg-headerBg text-headerTextDefaultColor border-gray-200 px-4 lg:px-6 py-0 dark:bg-gray-800 shadow">
             <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                 <a href="/" className="flex items-center">
                     {nav?.photo?.image && (
                       <Image
                         src={nav?.photo?.image}
                         alt={nav?.photo?.alt}
-                        className="mr-3 h-6 sm:h-9 rounded-full"
+                        className="h-12 "
                       />
                     )}
                     <div className='flex flex-col'>

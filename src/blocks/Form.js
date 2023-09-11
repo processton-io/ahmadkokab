@@ -13,7 +13,7 @@ export default function Form({ block }) {
   };
   const blocks = form.rows;
 
-  console.log(blocks)
+  // console.log(blocks)
 
   const convertToSafeInputFieldName = (str) => {
     // Replace any non-alphanumeric characters with underscores

@@ -2,6 +2,9 @@ import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export default function Image({ src, alt = '', ...props }) {
+  if(!src){
+    return(<></>)
+  }
   const isRemote = typeof src === 'string';
   const image = !isRemote ? getImage(src) : [];
   return (

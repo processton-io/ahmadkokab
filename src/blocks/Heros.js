@@ -8,12 +8,12 @@ export default function Heros({ data }) {
   
   return (
     <div className={clsx({ 
-            "h-screen": data.height === 'full', 
-            "h-80vh": data.height === '80vh', 
-            "h-60vh": data.height === '60vh', 
-            "h-40vh": data.height === '40vh', 
-            "h-20vh": data.height === '20vh', 
-            "h-auto": data.height === 'auto'
+            "min-h-screen": data.height === 'full', 
+            "min-h-80vh": data.height === '80vh', 
+            "min-h-60vh": data.height === '60vh', 
+            "min-h-40vh": data.height === '40vh', 
+            "min-h-20vh": data.height === '20vh', 
+            "min-h-auto": data.height === 'auto'
             })} >
       
       {data?.heros && (

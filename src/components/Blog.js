@@ -6,7 +6,7 @@ import Text from '../components/UI/Text'
 import { Link as GatsbyLink } from 'gatsby'
 
 export default function Blog(data) {
-    console.log(data    )
+    // console.log(data    )
     return (
         <>
             <div className='bg-cover bg-center p-2' style={{backgroundImage: `url(`+data?.data?.thumbnail+`)`}}>

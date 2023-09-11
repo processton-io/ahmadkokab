@@ -12,11 +12,11 @@ export default function WithVideoLeftToRight({ data }) {
         <section className={ 
           clsx({
             "body-font flex place-content-center items-center ": true,
-            "h-screen": data.height === 'full', 
-            "h-auto md:h-80vh": data.height === '80vh', 
-            "h-auto md:h-60vh": data.height === '60vh', 
-            "h-auto md:h-40vh": data.height === '40vh', 
-            "h-auto md:h-20vh": data.height === '20vh', 
+            "min-h-screen": data.height === 'full', 
+            "h-auto md:min-h-80vh": data.height === '80vh', 
+            "h-auto md:min-h-60vh": data.height === '60vh', 
+            "h-auto md:min-h-40vh": data.height === '40vh', 
+            "h-auto md:min-h-20vh": data.height === '20vh', 
             "h-auto": data.height === 'auto'
             })}>
             <div className="mx-auto flex px-5 py-24 md:flex-row flex-col items-center md:space-x-5">

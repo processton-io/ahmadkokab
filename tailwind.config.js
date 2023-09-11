@@ -59,6 +59,13 @@ module.exports = {
         '40vh': '40vh',
         '20vh': '20vh',
       },
+      minHeight: {
+        'window': '100vh',
+        '80vh': '80vh',
+        '60vh': '60vh',
+        '40vh': '40vh',
+        '20vh': '20vh',
+      },
       width: {
         'window': '100vh',
         '80vh': '80vh',

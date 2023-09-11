@@ -22,7 +22,7 @@ export default class BlogPreview extends React.Component {
       'date': date.data,
       'showTime': true
     }
-    console.log(data)
+    // console.log(data)
     return (
       <>
         <Blog data={data} showTime={true}/>

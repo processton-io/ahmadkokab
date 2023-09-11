@@ -3,7 +3,7 @@ import Recent from '../components/Article/Recent';
 
 export default function RecentArticles({ data,identifier, preview }) {
 
-  console.log(data.bg_settings)
+  // console.log(data.bg_settings)
 
   return (
     <section>

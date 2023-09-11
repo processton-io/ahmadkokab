@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown'
 export default function Text({ children, className, ...props }) {
 
   const generateLinkTarget = (link) => {
-    console.log(generateLinkTarget)
+    // console.log(generateLinkTarget)
     return link.startsWith(process.env.GATSBY_WEB_URL) || link.startsWith("/") ? "_self" : "_blank"
   }
   return (
