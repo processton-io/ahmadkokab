@@ -47,7 +47,7 @@ module.exports = {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         resolveSiteUrl: () =>
-          process.env.GATSBY_APP_URL || 'http://localhost:8000',
+          process.env.GATSBY_WEB_URL || 'http://localhost:8000',
       },
     },
     {
@@ -89,15 +89,66 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: process.env.GATSBY_APP_URL || 'http://localhost:8000',
-        sitemap: process.env.GATSBY_APP_URL || 'http://localhost:8000' + '/sitemap-0.xml',
-        policy: [{userAgent: '*', disallow: ['/sponsered-by', '/theme/*']}]
+        host: process.env.GATSBY_WEB_URL || 'http://localhost:8000',
+        sitemap: process.env.GATSBY_WEB_URL || 'http://localhost:8000' + '/sitemap-0.xml',
+        policy: [{userAgent: '*', disallow: [
+          
+        ]}]
       }
     },
     'gatsby-plugin-sitemap',
     {
       resolve: "gatsby-plugin-sitemap",
-      excludes: ['/sponsered-by', '/theme/*']
+      excludes: [
+        
+      ]
+    },
+    {
+      resolve: `gatsby-plugin-csp`,
+      options: {
+        disableOnDev: true,
+        reportOnly: false, // Changes header to Content-Security-Policy-Report-Only for csp testing purposes
+        mergeScriptHashes: true, // you can disable scripts sha256 hashes
+        mergeStyleHashes: true, // you can disable styles sha256 hashes
+        mergeDefaultDirectives: true,
+        directives: {
+          "script-src": "'self' www.google-analytics.com",
+          "style-src": "'self' 'unsafe-inline'",
+          "img-src": "'self' data: www.google-analytics.com"
+          // you can add your directives or override defaults
+        }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          process.env.GATSBY_GOOGLE_GA || "GA-TRACKING_ID", // Google Analytics / GA
+          process.env.GATSBY_GOOGLE_AW_CONVERSION_ID || "AW-CONVERSION_ID", // Google Ads / Adwords / AW
+          process.env.GATSBY_GOOGLE_DC_FLOODIGHT_ID || "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
+        ],
+        // This object gets passed directly to the gtag config command
+        // This config will be shared across all trackingIds
+        gtagConfig: {
+          optimize_id: process.env.GATSBY_GOOGLE_OPT_CONTAINER_ID || "OPT_CONTAINER_ID",
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+          // Setting this parameter is also optional
+          respectDNT: true,
+          // Avoids sending pageview hits from custom paths
+          exclude: ["/preview/**", "/do-not-track/me/too/"],
+          // Defaults to https://www.googletagmanager.com
+          origin: "YOUR_SELF_HOSTED_ORIGIN",
+          // Delays processing pageview events on route update (in milliseconds)
+          delayOnRouteUpdate: 0,
+        },
+      },
     },
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
