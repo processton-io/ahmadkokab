@@ -105,24 +105,24 @@ module.exports = {
     },
     
     // `gatsby-plugin-csp`,
-    {
-      resolve: `gatsby-plugin-csp`,
-      options: {
-        disableOnDev: false,
-        reportOnly: false, // Changes header to Content-Security-Policy-Report-Only for csp testing purposes
-        mergeScriptHashes: false, // you can disable scripts sha256 hashes
-        mergeStyleHashes: false, // you can disable styles sha256 hashes
-        mergeDefaultDirectives: true,
-        directives: {
-          // "script-src": "'self' ",
-          'default-src': `'self' data: 'unsafe-inline' ${process.env.GATSBY_WEB_URL || 'http://localhost:8000'} https://www.google-analytics.com https://www.googleanalytics.com https://www.google.com;`,
-          'script-src': `'self' data: 'unsafe-inline' 'unsafe-eval' ${process.env.GATSBY_WEB_URL || 'http://localhost:8000'} https://www.google-analytics.com https://www.googleanalytics.com https://www.google.com https://www.gstatic.com/; script-src-elem 'self' data: 'unsafe-inline' 'unsafe-eval' ${process.env.GATSBY_WEB_URL || 'http://localhost:8000'} https://www.google-analytics.com https://www.googleanalytics.com https://www.google.com https://www.gstatic.com/; script-src-attr 'self' data: 'unsafe-inline' 'unsafe-eval' ${process.env.GATSBY_WEB_URL || 'http://localhost:8000'} https://www.google-analytics.com https://www.googleanalytics.com https://www.google.com https://www.gstatic.com/;`,
-          'style-src': `'self' data: 'unsafe-inline' ${process.env.GATSBY_WEB_URL || 'http://localhost:8000'} https://www.google-analytics.com https://www.googleanalytics.com https://www.google.com; style-src-elem 'self' data: 'unsafe-inline' ${process.env.GATSBY_WEB_URL || 'http://localhost:8000'} https://www.google-analytics.com https://www.googleanalytics.com https://www.google.com; style-src-attr 'self' data: 'unsafe-inline' ${process.env.GATSBY_WEB_URL || 'http://localhost:8000'} https://www.google-analytics.com https://www.googleanalytics.com https://www.google.com;`,
-          "img-src": `'self' ${process.env.GATSBY_WEB_URL || 'http://localhost:8000'} https://www.google-analytics.com https://www.googleanalytics.com https://www.google.com`,
-          // "connect-src": "https://google-analytics.com https://analytics.google.com https://googletagmanager.com https://g.doubleclick.net https://google.com https://google.com;"
-        }
-      }
-    },
+    //{
+    //  resolve: `gatsby-plugin-csp`,
+    //  options: {
+    //    disableOnDev: false,
+    //    reportOnly: false, // Changes header to Content-Security-Policy-Report-Only for csp testing purposes
+    //    mergeScriptHashes: false, // you can disable scripts sha256 hashes
+    //    mergeStyleHashes: false, // you can disable styles sha256 hashes
+    //    mergeDefaultDirectives: true,
+    //    directives: {
+    //      // "script-src": "'self' ",
+    //      'default-src': `'self' data: 'unsafe-inline' ${process.env.GATSBY_WEB_URL || 'http://localhost:8000'} https://www.google-analytics.com https://www.googleanalytics.com https://www.google.com;`,
+    //      'script-src': `'self' data: 'unsafe-inline' 'unsafe-eval' ${process.env.GATSBY_WEB_URL || 'http://localhost:8000'} https://www.google-analytics.com https://www.googleanalytics.com https://www.google.com https://www.gstatic.com/; script-src-elem 'self' data: 'unsafe-inline' 'unsafe-eval' ${process.env.GATSBY_WEB_URL || 'http://localhost:8000'} https://www.google-analytics.com https://www.googleanalytics.com https://www.google.com https://www.gstatic.com/; script-src-attr 'self' data: 'unsafe-inline' 'unsafe-eval' ${process.env.GATSBY_WEB_URL || 'http://localhost:8000'} https://www.google-analytics.com https://www.googleanalytics.com https://www.google.com https://www.gstatic.com/;`,
+    //      'style-src': `'self' data: 'unsafe-inline' ${process.env.GATSBY_WEB_URL || 'http://localhost:8000'} https://www.google-analytics.com https://www.googleanalytics.com https://www.google.com; style-src-elem 'self' data: 'unsafe-inline' ${process.env.GATSBY_WEB_URL || 'http://localhost:8000'} https://www.google-analytics.com https://www.googleanalytics.com https://www.google.com; style-src-attr 'self' data: 'unsafe-inline' ${process.env.GATSBY_WEB_URL || 'http://localhost:8000'} https://www.google-analytics.com https://www.googleanalytics.com https://www.google.com;`,
+    //      "img-src": `'self' ${process.env.GATSBY_WEB_URL || 'http://localhost:8000'} https://www.google-analytics.com https://www.googleanalytics.com https://www.google.com`,
+    //      // "connect-src": "https://google-analytics.com https://analytics.google.com https://googletagmanager.com https://g.doubleclick.net https://google.com https://google.com;"
+    //    }
+    //  }
+    //},
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
