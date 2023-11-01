@@ -8,3 +8,9 @@
 
 [[plugins]]
   package = "@netlify/plugin-gatsby"
+
+[[plugins]]
+  package = "@netlify/plugin-csp-nonce"
+  [plugins.inputs]
+    reportOnly = true
+    excludedPath = []
