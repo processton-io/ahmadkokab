@@ -13,4 +13,7 @@
   package = "@netlify/plugin-csp-nonce"
   [plugins.inputs]
     reportOnly = true
-    excludedPath = []
+    excludedPath = [
+      '/admin',
+      '/admin/*'
+    ]
