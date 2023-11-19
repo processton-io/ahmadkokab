@@ -31,7 +31,7 @@ blocks:
     title: ""
     columns:
       - photo:
-          image: /img/heroes.png
+          image: /img/afk_logo-removebg.png
         title: Hero
         content: As the first thing people see when they visit your website, a hero
           section is **the area that immediately shows up on the screen under

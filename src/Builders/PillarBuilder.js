@@ -9,18 +9,22 @@ import Perks from '../blocks/Perks';
 import Content from '../blocks/Content';
 import Form from '../blocks/Form';
 import WideSlider from '../blocks/WideSlider';
+import Heading from '../blocks/Heading';
 
 export default function PillarBuilder({ pillars, preview = false }) {
+  console.log(pillars)
   return (
     <>
       {pillars &&
         pillars.map((pillar, i) => {
-          
+          console.log(pillar)
           switch (pillar.type) {
             case 'hero_slider':
-              return <Heros key={i} data={pillar} />;
+              return <Heros key={i} data={pillar} preview={preview} />;
             case 'hero':
-              return <Hero key={i} data={pillar} />;
+              return <Hero key={i} data={pillar} preview={preview} />;
+            case 'heading':
+              return <Heading key={i} data={pillar} preview={preview} />;
             case 'recentArticles':
               return <RecentArticles key={i} identifier={`recent_article`+i} data={pillar} preview={preview} />;
             case 'content_image':

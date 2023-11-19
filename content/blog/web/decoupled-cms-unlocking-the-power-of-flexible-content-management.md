@@ -1,7 +1,7 @@
 ---
 id: KLcLTqNRV
 type: post
-layout: blog
+layout: blog-builder
 title: Unlocking the Power of Flexible Content Management
 permalink: /blog/decoupled-cms-unlocking-the-power-of-flexible-content-management/
 photo:

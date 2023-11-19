@@ -1,5 +1,7 @@
 {
   "photo": {
-    "image": "/img/afk_logo-removebg.png"
-  }
+    "image": "/img/afk_logo-removebg.png",
+    "alt": "afk-logo"
+  },
+  "title": "Ahmad Faryab Kokab"
 }

@@ -1,7 +1,7 @@
 ---
 id: 44d0d78e-1f11-4f92-85ac-d144d60bb573
 type: post
-layout: blog
+layout: blog-builder
 title: "Setting Up Netlify CMS: A Step-by-Step Guide"
 permalink: /blog/setting-up-netlify-cms-step-by-step-guide/
 photo:

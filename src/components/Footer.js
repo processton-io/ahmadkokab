@@ -8,7 +8,7 @@ import socialLinks from '../settings/social_links.json'
 export default function Footer() {
 
   return (
-    <footer className="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-800">
+    <footer className="p-4 bg-footerBg md:p-8 lg:p-10 dark:bg-gray-800">
       <div className="mx-auto max-w-screen-xl text-center">
           {footer?.content && ( <p className="my-6 text-gray-500 dark:text-gray-400">{footer?.content}</p>)}
           <ul className="flex flex-wrap justify-center items-center mb-6 text-gray-900 dark:text-white">

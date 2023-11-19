@@ -1,7 +1,7 @@
 ---
 id: Cbkv-GCam
 type: post
-layout: blog
+layout: blog-builder
 title: AI from Developer's Perspective
 permalink: /blog/ai-from-developers-perspective/
 date: 2023-06-22T15:51:33.499Z

@@ -1,7 +1,8 @@
 import React from 'react';
-import Blog from '../../src/components/Blog';
+import TipBuilder from '../../src/Builders/TipBuilder';
 
-export default class TipsPreview extends React.Component {
+
+export default class SkillsPreview extends React.Component {
   render() {
     const title = this.props.widgetsFor('title').toJS();
     const excerpt = this.props.widgetsFor('excerpt').toJS();
@@ -18,7 +19,7 @@ export default class TipsPreview extends React.Component {
     }
     return (
       <>
-        <Blog data={data} />
+        <TipBuilder data={data} />
       </>
     );
   }

@@ -1,5 +1,6 @@
 import React from 'react';
-import Blog from '../../src/components/Blog';
+import BlogBuilder from '../../src/Builders/BlogBuilder';
+
 
 export default class BlogPreview extends React.Component {
   render() {
@@ -25,7 +26,7 @@ export default class BlogPreview extends React.Component {
     // console.log(data)
     return (
       <>
-        <Blog data={data} showTime={true}/>
+        <BlogBuilder data={data} showTime={true}/>
       </>
     );
   }

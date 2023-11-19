@@ -3,29 +3,29 @@ import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import Layout from '@/components/Layout'
-import DefaultHead from '../components/Head/DefaultHead'
-import Blog from '../components/Blog';
+import DefaultHead from '@/components/Head/DefaultHead'
+import TipBuilder from '../Builders/TipBuilder'
 
-const Post = ({ data }) => {
+const Tip = ({ data }) => {
   
-  const bgImage =   typeof data.post.frontmatter?.photo === 'string' ? data.post.frontmatter?.photo : data.post.frontmatter?.photo?.image?.childImageSharp?.gatsbyImageData?.images?.fallback?.src
+  const bgImage =   typeof data.tip.frontmatter?.photo === 'string' ? data.tip.frontmatter?.photo : data.tip.frontmatter?.photo?.image?.childImageSharp?.gatsbyImageData?.images?.fallback?.src
    
   const object = {
-    'title': data.post.frontmatter.title,
-    'excerpt' : data.post.frontmatter.excerpt,
-    'body' : data.post.rawMarkdownBody,
+    'title': data.tip.frontmatter.title,
+    'excerpt' : data.tip.frontmatter.excerpt,
+    'body' : data.tip.rawMarkdownBody,
     'thumbnail': bgImage,
-    'date': data.post.frontmatter.date,
+    'date': data.tip.frontmatter.date,
     'showTime': true
   };
   return (
     <Layout nav={true}>
-      <Blog data={object} />
+      <TipBuilder data={object} />
     </Layout>
   )
 }
 
-Post.propTypes = {
+Tip.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -34,17 +34,17 @@ Post.propTypes = {
 }
 
 export const Head = ({ data }) => (
-  <DefaultHead data={data.post.frontmatter.seo}>
+  <DefaultHead data={data.tip.frontmatter.seo}>
     {/* Additonal values here */}
     <meta id="oty" property="og:type" content="article" />
   </DefaultHead>
 )
 
-export default Post
+export default Tip
 
 export const basicPageQuery = graphql`
   query PostQuery($id: String!) {
-    post: markdownRemark(id: { eq: $id }) {
+    tip: markdownRemark(id: { eq: $id }) {
       id
       html
       rawMarkdownBody

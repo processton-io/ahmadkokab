@@ -1,24 +1,24 @@
 import React from 'react';
-import Blog from '../../src/components/Blog';
+import StoryBuilder from '../../src/Builders/StoryBuilder';
+
 
 export default class StoriesPreview extends React.Component {
   render() {
     const title = this.props.widgetsFor('title').toJS();
     const excerpt = this.props.widgetsFor('excerpt').toJS();
     const body = this.props.widgetsFor('body').toJS();
-    const thumbnail = this.props.widgetsFor('thumbnail').toJS();
     const date = this.props.widgetsFor('date').toJS();
     const data = {
       'title': title?.data,
       'excerpt' : excerpt?.data,
       'body' : body?.data,
-      'thumbnail': thumbnail?.data,
       'date': date.data,
       'showTime': false
     }
+    console.log(data)
     return (
       <>
-        <Blog data={data} />
+        <StoryBuilder data={data} />
       </>
     );
   }

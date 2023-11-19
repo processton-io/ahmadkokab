@@ -8,19 +8,19 @@ import DefaultPerk from './Perks/Default'
 import PerkCards from './Perks/PerkCards'
 import Galley from './Perks/Galley'
 
-function PerkItems({ data }) {
+function PerkItems({ data, preview = false }) {
   switch (data.variant){
     case 'cards':
       return (
-          <PerkCards data={data} />
+          <PerkCards data={data} preview={preview} />
       )
     case 'gallery':
       return (
-          <Galley data={data} />
+          <Galley data={data} preview={preview} />
       )
     default:
       return (
-          <DefaultPerk data={data} />
+          <DefaultPerk data={data} preview={preview} />
       )
   }
 }
@@ -34,13 +34,13 @@ export default function Perks({ data }) {
         bgImageAlt={data?.bg_photo?.alt}
         disabled={data?.bg_photo?.enable_parallax === true}
     >
-      <section className='py-10 bg-white bg-opacity-50 dark:bg-[#0d0d10] lg:py-20 '>
+      <section className='py-5'  style={{ backgroundColor: data.bg_settings.bg_color}}>
         
         <Container>
           {data?.title && (
             <Title
-              Tag='h2'
-              variant='xl'
+              Tag='h4'
+              variant='md'
               className={`mx-auto mb-4 max-w-6xl lg:mb-10 text-perkTitle`}>
               {data?.title}
             </Title>

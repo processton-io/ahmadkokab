@@ -53,7 +53,7 @@ blocks:
               show_popup: false
               permalink: www.hamza-hospital.com
               photo:
-                image: /img/pngegg.png
+                image: /img/afk_logo-removebg.png
             - title: Dentals.PK
               content: open source framework with performance, scalability and security
                 built-in.
@@ -93,7 +93,7 @@ blocks:
               show_popup: false
               permalink: www.hamza-hospital.com
               photo:
-                image: /img/pngegg.png
+                image: /img/afk_logo-removebg.png
             - title: Dentals.PK
               content: open source framework with performance, scalability and security
                 built-in.
@@ -133,7 +133,7 @@ blocks:
               show_popup: false
               permalink: www.hamza-hospital.com
               photo:
-                image: /img/pngegg.png
+                image: /img/afk_logo-removebg.png
             - title: Dentals.PK
               content: open source framework with performance, scalability and security
                 built-in.
@@ -173,7 +173,7 @@ blocks:
               show_popup: false
               permalink: www.hamza-hospital.com
               photo:
-                image: /img/pngegg.png
+                image: /img/afk_logo-removebg.png
             - title: Dentals.PK
               content: open source framework with performance, scalability and security
                 built-in.

@@ -1,5 +1,6 @@
 import React from 'react';
-import PageBuilder from '../../src/components/PageBuilder';
+import PageBuilder from '../../src/Builders/PageBuilder';
+
 
 export default class PagePreview extends React.Component {
   render() {

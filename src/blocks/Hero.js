@@ -9,6 +9,7 @@ import HeroGenerator from './Hero/HeroGenerator';
 
 export default function Hero({ data,  height }) {
   const image = getImage(data.bg_settings?.bg_photo)
+  console.log(image, data)
   const bgImage = convertToBgImage(image)
   data.height = height;
   switch (data.bg_settings.variant){

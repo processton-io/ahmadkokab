@@ -7,17 +7,6 @@ const Config = {
   widget: 'list',
   types: [
     {
-      label: 'Hero Slider',
-      name: 'hero_slider',
-      widget: 'list',
-      summary: 'Slider {{fields.title}}',
-      fields: [
-        VariantField('default', ['default']),
-        HeightField('full'),
-        Heros,
-      ],
-    },
-    {
       label: 'Content',
       name: 'content',
       widget: 'object',
@@ -141,6 +130,7 @@ const Config = {
       summary: 'Content {{fields.variant}}: {{fields.title}}',
       fields: [
         Title,
+        backgroundSettingsField(),
         VariantField('h1', ['h1','h2','h3','h4','h5','h6']),
       ],
     },

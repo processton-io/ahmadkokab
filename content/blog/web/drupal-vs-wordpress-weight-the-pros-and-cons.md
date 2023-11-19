@@ -1,7 +1,7 @@
 ---
 id: gvUDST44U
 type: post
-layout: blog
+layout: blog-builder
 title: "Drupal vs. WordPress: Weighing the Pros and Cons"
 permalink: /blog/drupal-vs-wordpress-weight-the-pros-and-cons/
 photo:

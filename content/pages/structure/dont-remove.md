@@ -40,7 +40,7 @@ blocks:
               show_popup: false
               permalink: www.hamza-hospital.com
               photo:
-                image: /img/pngegg.png
+                image: /img/afk_logo-removebg.png
             - title: Dentals.PK
               content: open source framework with performance, scalability and security
                 built-in.
@@ -106,7 +106,7 @@ blocks:
               show_popup: false
               permalink: www.hamza-hospital.com
               photo:
-                image: /img/pngegg.png
+                image: /img/afk_logo-removebg.png
             - title: Dentals.PK
               content: open source framework with performance, scalability and security
                 built-in.
@@ -130,7 +130,7 @@ blocks:
           content: Get Started
           url: /get-started
     photo:
-      image: /img/heroes.png
+      image: /img/afk_logo-removebg.png
       alt: Layers
   - type: perks
     title: Technology Stack
@@ -141,7 +141,7 @@ blocks:
         show_popup: false
         permalink: /reactjs/
         photo:
-          image: /img/pngegg.png
+          image: /img/afk_logo-removebg.png
       - title: Gatsby
         content: open source framework with performance, scalability and security
           built-in.
@@ -179,7 +179,7 @@ blocks:
     content: "for open source framework with performance, scalability and security"
     form: T9c8SkeW4
     photo:
-      image: /img/heroes.png
+      image: /img/afk_logo-removebg.png
       alt: Layers
   - type: recentArticles
     title: 'Recent Articles'

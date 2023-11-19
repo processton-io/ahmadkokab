@@ -24,7 +24,7 @@ blocks:
     content: "for open source framework with performance, scalability and security"
     form: T9c8SkeW4
     photo:
-      image: /img/heroes.png
+      image: /img/afk_logo-removebg.png
       alt: Layers
 seo:
   ogimage: /img/4000_2_01.jpg

@@ -42,6 +42,9 @@ module.exports = {
 
         perkTitle: colors.perks.title,
         perkSubTitle: colors.perks.subtitle,
+        
+        bodyBg: "#DDEDFC",
+        footerBg: "#DDEDFC",
 
       },
       backgroundSize: {

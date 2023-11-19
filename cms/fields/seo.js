@@ -1,4 +1,5 @@
 import metadata from '../../src/settings/seo.json';
+import maindata from '../../src/settings/main.json';
 
 const partial = {
   label: 'SEO Settings',
@@ -11,7 +12,7 @@ const partial = {
       name: 'title',
       widget: 'string',
       required: false,
-      hint: `Default title: ${metadata.title}, title template is '{title} ${metadata.separator} ${metadata.baseTitle}'`,
+      hint: `Default title: ${maindata.title}, title template is '{title} ${metadata.separator} ${metadata.baseTitle}'`,
     },
     {
       label: 'Meta Description',
@@ -25,7 +26,7 @@ const partial = {
       name: 'ogimage',
       widget: 'image',
       required: true,
-      default: metadata.image,
+      default: maindata.photo.image,
     },
   ],
 };

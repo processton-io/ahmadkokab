@@ -9,7 +9,8 @@ import Perks from '../blocks/Perks';
 import Content from '../blocks/Content';
 import Form from '../blocks/Form';
 import WideSlider from '../blocks/WideSlider';
-import BreadCrumbs from './BreadCrumbs';
+import BreadCrumbs from '../components/BreadCrumbs';
+import Heading from '../blocks/Heading';
 
 export default function PageBuilder({ frontmatter, preview = false }) {
   return (
@@ -22,9 +23,11 @@ export default function PageBuilder({ frontmatter, preview = false }) {
           
           switch (block.type) {
             case 'hero_slider':
-              return <Heros key={i} data={block} />;
+              return <Heros key={i} data={block} preview={preview}  />;
             case 'hero':
-              return <Hero key={i} data={block} />;
+              return <Hero key={i} data={block} preview={preview}  />;
+            case 'heading':
+              return <Heading key={i} data={block} preview={preview} />;
             case 'recentArticles':
               return <RecentArticles key={i} identifier={`recent_article`+i} data={block} preview={preview} />;
             case 'content_image':
@@ -71,74 +74,17 @@ export const query = graphql`
           }
         }
       }
+      bg_settings {
+        variant
+        overlay
+        bg_color
+        bg_video
+      }
       buttons {
         button {
           content
           url
           variant
-        }
-      }
-      
-      heros {
-        hero {
-          title
-          content
-          variant
-          color_theme
-          ratio
-          buttons {
-            button {
-              content
-              url
-              variant
-            }
-          }
-          form
-          bg_settings {
-            variant
-            overlay
-            bg_color
-            bg_video
-            bg_photo {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 2048
-                  quality: 70
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
-                )
-              }
-            }
-          }
-          photo{
-            image {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 400
-                    quality: 72
-                    placeholder: BLURRED
-                    formats: [AUTO, WEBP, AVIF]
-                  )
-                }
-              }
-          }
-          video
-          columns {
-            title
-            content
-            photo{
-              image {
-                  childImageSharp {
-                    gatsbyImageData(
-                      width: 150
-                      quality: 72
-                      placeholder: BLURRED
-                      formats: [AUTO, WEBP, AVIF]
-                    )
-                  }
-                }
-            }
-          }
         }
       }
       columns {

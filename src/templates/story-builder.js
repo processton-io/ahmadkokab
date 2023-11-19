@@ -3,29 +3,29 @@ import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import Layout from '@/components/Layout'
-import DefaultHead from '../components/Head/DefaultHead'
-import Blog from '../../src/components/Blog';
+import DefaultHead from '@/components/Head/DefaultHead'
+import StoryBuilder from '../Builders/StoryBuilder'
 
-const Post = ({ data }) => {
+const Story = ({ data }) => {
   
-  const bgImage =   typeof data.post.frontmatter?.photo === 'string' ? data.post.frontmatter?.photo : data.post.frontmatter?.photo?.image?.childImageSharp?.gatsbyImageData?.images?.fallback?.src
+  const bgImage =   typeof data.story.frontmatter?.photo === 'string' ? data.story.frontmatter?.photo : data.story.frontmatter?.photo?.image?.childImageSharp?.gatsbyImageData?.images?.fallback?.src
    
   const object = {
-    'title': data.post.frontmatter.title,
-    'excerpt' : data.post.frontmatter.excerpt,
-    'body' : data.post.rawMarkdownBody,
+    'title': data.story.frontmatter.title,
+    'excerpt' : data.story.frontmatter.excerpt,
+    'body' : data.story.rawMarkdownBody,
     'thumbnail': bgImage,
-    'date': data.post.frontmatter.date,
-    'showTime': false
+    'date': data.story.frontmatter.date,
+    'showTime': true
   };
   return (
     <Layout nav={true}>
-      <Blog data={object} />
+      <StoryBuilder data={object} />
     </Layout>
   )
 }
 
-Post.propTypes = {
+Story.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -34,17 +34,17 @@ Post.propTypes = {
 }
 
 export const Head = ({ data }) => (
-  <DefaultHead data={data.post.frontmatter.seo}>
+  <DefaultHead data={data.story.frontmatter.seo}>
     {/* Additonal values here */}
     <meta id="oty" property="og:type" content="article" />
   </DefaultHead>
 )
 
-export default Post
+export default Story
 
 export const basicPageQuery = graphql`
   query PostQuery($id: String!) {
-    post: markdownRemark(id: { eq: $id }) {
+    story: markdownRemark(id: { eq: $id }) {
       id
       html
       rawMarkdownBody
@@ -56,6 +56,7 @@ export const basicPageQuery = graphql`
         type
         date
         permalink
+        
         photo {
           image {
             childImageSharp {

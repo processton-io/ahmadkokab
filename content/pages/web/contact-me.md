@@ -4,6 +4,8 @@ type: page
 layout: page-builder
 title: Contact me
 permalink: /contact-me/
+photo:
+  image: /img/decapcms.jpeg
 blocks:
   - type: form
     title: Get in touch with me

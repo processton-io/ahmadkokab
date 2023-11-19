@@ -6,9 +6,9 @@
       "type": "default"
     },
     {
-      "name": "Blogs",
-      "permalink": "/blogs",
-      "type": "default"
+      "type": "default",
+      "name": "Skill Set",
+      "permalink": "/skills"
     },
     {
       "name": "Contact me",
