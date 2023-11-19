@@ -128,6 +128,10 @@ blocks:
         permalink: /skills/wordpress
         photo:
           image: /img/wordpress.png
+      - title: Decap
+        permalink: /skills/decap
+        photo:
+          image: /img/decap.png
 seo:
   ogimage: /img/afk_logo-removebg.png
   title: Portfolio
