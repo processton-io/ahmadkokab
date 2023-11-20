@@ -13,6 +13,14 @@ export default function Form({ block }) {
   };
   const blocks = form.rows;
 
+  const slugify = str =>
+  str
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/[\s_-]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
   // console.log(blocks)
 
   const convertToSafeInputFieldName = (str) => {
@@ -46,7 +54,7 @@ export default function Form({ block }) {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({"form-name": block.title, ...formData}),
+      body: encode({"form-name": slugify(block.title), ...formData}),
     })
       .then(() => {
         setSuccessMessage(form.settings.success_msg ? form.settings.success_msg : "Your request is submitted")
@@ -70,8 +78,8 @@ export default function Form({ block }) {
       >
         <div className='container mx-auto lg:max-w-2xl py-16 px-6'>
           <h1 className='dark:text-white font-semibold text-3xl md:text-4xl mb-6'>{block.title}</h1>
-          <form onSubmit={(e) => handleSubmit(e)} name={block.title} method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" >
-            <input type="hidden" name="form-name" value={block.title} />
+          <form name={slugify(block.title)} onSubmit={(e) => handleSubmit(e)} method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" >
+            <input type="hidden" name="form-name" value={slugify(block.title)} />
 
               <div>
                 
@@ -85,7 +93,7 @@ export default function Form({ block }) {
                         {blocks && blocks.map(((blockElement, i) => {
                           return blockElement.fields.map((field, x) => {
                             if(field.input_type === 'hidden'){
-                              return <input type={field.input_type} id={i+`-`+x} key={`form-hidden`+i+`-`+x} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder={field.label} required={field.required} name={convertToSafeInputFieldName(field.name)} />
+                              return <input type={field.input_type} id={i+`-`+x} key={`form-hidden`+i+`-`+x} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder={field.label} required={field.required} name={slugify(field.name)} />
                             }else{
                               return <></>
                             }
@@ -106,21 +114,21 @@ export default function Form({ block }) {
                                       return (
                                         <div className="flex-1" key={`form-field`+i+`-`+x}>
                                             <label htmlFor={i+`-`+x} className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{field.label}</label>
-                                            <input type={field.input_type} id={i+`-`+x} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder={field.label} required={field.required} name={convertToSafeInputFieldName(field.name)} />
+                                            <input type={field.input_type} id={i+`-`+x} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder={field.label} required={field.required} name={slugify(field.name)} />
                                         </div>
                                       )
                                     case 'textarea':
                                       return (
                                         <div className="flex-1" key={`form-field`+i+`-`+x}>
                                             <label htmlFor={i+`-`+x} className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{field.label}</label>
-                                            <textarea type={field.input_type} id={i+`-`+x} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder={field.label} required={field.required} name={convertToSafeInputFieldName(field.name)} ></textarea>
+                                            <textarea type={field.input_type} id={i+`-`+x} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder={field.label} required={field.required} name={slugify(field.name)} ></textarea>
                                         </div>
                                       )
                                     case 'checkbox':
                                       return (
                                         <div className="flex items-start mb-6 flex-1" key={`form-field`+i+`-`+x}>
                                           <div className="flex items-center h-5">
-                                            <input id={i+`-`+x} type="checkbox" value="" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required={field.required} name={convertToSafeInputFieldName(field.name)} />
+                                            <input id={i+`-`+x} type="checkbox" value="" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required={field.required} name={slugify(field.name)} />
                                           </div>
                                           <label id={i+`-`+x} className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{field.label}</label>
                                         </div>
@@ -129,7 +137,7 @@ export default function Form({ block }) {
                                       return (
                                         <div className="flex-1" key={`form-field`+i+`-`+x}>
                                             <label htmlFor={i+`-`+x} className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{field.label}{field.type}{field.input_type}</label>
-                                            <input type={field.input_type} id={i+`-`+x} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder={field.label} required={field.required} name={convertToSafeInputFieldName(field.name)} />
+                                            <input type={field.input_type} id={i+`-`+x} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder={field.label} required={field.required} name={slugify(field.name)} />
                                         </div>
                                       );
                                   }
