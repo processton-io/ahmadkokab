@@ -14,7 +14,7 @@ blocks:
             - button:
                 variant: button
                 content: Contact me
-                url: /contact-us
+                url: /contact-me
           variant: default
           height: full
           ratio: 10/2
