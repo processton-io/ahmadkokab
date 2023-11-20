@@ -85,14 +85,8 @@ export default function Form({ block }) {
       >
         <div className='container mx-auto lg:max-w-2xl py-16 px-6'>
           <h1 className='dark:text-white font-semibold text-3xl md:text-4xl mb-6'>{block.title}</h1>
-          { successMessage !== "" ? (
-              <div className="p-4 mb-6 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
-                <span className="font-medium">{successMessage}</span>
-              </div>
-            ):(<></>) }
-          <form name={slugify(block.title)} onSubmit={(e) => handleSubmit(e)} method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true"  className={clsx({
-            "hidden": successMessage !== ""
-          })} >
+          
+          <form name={slugify(block.title)} onSubmit={(e) => handleSubmit(e)} method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" >
             <input type="hidden" name="form-name" value={slugify(block.title)} />
 
               <div>
