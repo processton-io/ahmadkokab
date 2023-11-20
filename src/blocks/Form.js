@@ -63,7 +63,8 @@ export default function Form({ block }) {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({"form-name": slugify(block.title), ...data}),
     })
-      .then(() => {
+      .then((response) => {
+        console.log(response)
         setSuccessMessage(form.settings.success_msg ? form.settings.success_msg : "Your request is submitted")
       })
       .catch((error) => {
