@@ -42,7 +42,7 @@ export default function Form({ block }) {
 
     const myForm = event.target;
     const formData = new FormData(myForm);
-    
+    console.log(formData)
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -70,7 +70,7 @@ export default function Form({ block }) {
       >
         <div className='container mx-auto lg:max-w-2xl py-16 px-6'>
           <h1 className='dark:text-white font-semibold text-3xl md:text-4xl mb-6'>{block.title}</h1>
-          <form name={block.title} method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" >
+          <form onSubmit={(e) => handleSubmit(e)} name={block.title} method="POST" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true" >
             <input type="hidden" name="form-name" value={block.title} />
 
               <div>
