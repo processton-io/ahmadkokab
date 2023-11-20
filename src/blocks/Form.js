@@ -50,11 +50,17 @@ export default function Form({ block }) {
 
     const myForm = event.target;
     const formData = new FormData(myForm);
-    console.log(formData)
+    
+    let data = {};
+    for (var pair of formData.entries()) {
+      console.log(pair[0] + ": " + pair[1]);
+      data[pair[0]] = pair[1];
+    }
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({"form-name": slugify(block.title), ...formData}),
+      body: encode({"form-name": slugify(block.title), ...data}),
     })
       .then(() => {
         setSuccessMessage(form.settings.success_msg ? form.settings.success_msg : "Your request is submitted")
@@ -165,7 +171,7 @@ export default function Form({ block }) {
                 <span className="font-medium">{errorMessage}</span>
               </div>
             ):(<></>) }
-              <div class="g-recaptcha" data-sitekey="6LcZkZcnAAAAAB6lfo62ra7hEEYMx53BcwloTxvv" />
+              <div class="g-recaptcha" data-sitekey="6LdzMxYpAAAAADsKbuY0rEQNpo8s26j-OL0TDuMa" />
               <div className='text-right'>
                 <button type="submit" className='inline-block bg-primaryButtonDefaultBG hover:bg-primaryButtonHoverBG text-primaryButtonDefaultColor hover:text-primaryButtonHoverColor focus:ring-4 ring-primaryButtonHoverRing  hover:ring-primaryButtonDefaultRing focus:ring-primaryButtonDefaultRing font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 dark:bg-white dark:text-black dark:hover:bg-gray-500 focus:outline-none dark:focus:ring-white'>
                   Submit
