@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
+import { CodeBlock, dracula } from 'react-code-blocks';
 
 export default function Text({ children, className, ...props }) {
 
@@ -46,8 +47,23 @@ export default function Text({ children, className, ...props }) {
             {props.children}
           </h6>
         ),
+        p: ({ node, ...props }) => (
+          <p className={'prose dark:prose-invert '+  props.className}>
+            {props.children}
+          </p>
+        ),
+        code: ({ node, ...props }) => {
+          const language = props.className.split('-');
+          return (
+          <CodeBlock
+            text={props.children[0]}
+            language={language[1]}
+            showLineNumbers={true}
+            theme={dracula} />
+        )}
+
       }}
-      className={clsx('prose dark:prose-invert ', className)}
+      className={clsx(' ', className)}
       {...props}
     >
       {children}

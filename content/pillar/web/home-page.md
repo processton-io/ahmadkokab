@@ -134,6 +134,6 @@ blocks:
           image: /img/decap.png
 seo:
   ogimage: /img/afk_logo-removebg.png
-  title: Portfolio
-  description: Creative developer from Pakistan.
+  title: Ahmad Faryab Kokab Portfolio
+  description: Hi, i'm Ahmad Faryab Kokab Creative developer from Pakistan.
 ---

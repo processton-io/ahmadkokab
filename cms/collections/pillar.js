@@ -9,6 +9,7 @@ const collection = {
   description: 'Pillar Pages For your Website',
   folder: 'content/pillar/web',
   create: true,
+  sortable_fields: ['type', 'title'],
   fields: [
     ID,
     {
@@ -25,7 +26,7 @@ const collection = {
     },
     {
       label: 'Title',
-      name: 'title',
+      name: 'title',  
       widget: 'string',
     },
     PermalinkField(),

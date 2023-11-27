@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .short_description{
     overflow: hidden;
     display: -webkit-box;

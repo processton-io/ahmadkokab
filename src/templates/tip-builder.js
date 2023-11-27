@@ -8,16 +8,13 @@ import TipBuilder from '../Builders/TipBuilder'
 
 const Tip = ({ data }) => {
   
-  const bgImage =   typeof data.tip.frontmatter?.photo === 'string' ? data.tip.frontmatter?.photo : data.tip.frontmatter?.photo?.image?.childImageSharp?.gatsbyImageData?.images?.fallback?.src
-   
   const object = {
     'title': data.tip.frontmatter.title,
-    'excerpt' : data.tip.frontmatter.excerpt,
-    'body' : data.tip.rawMarkdownBody,
-    'thumbnail': bgImage,
-    'date': data.tip.frontmatter.date,
-    'showTime': true
+    'code': data.tip.frontmatter.code,
+    'skills': data.skills.edges,
+    'body' : data.tip.rawMarkdownBody.edges
   };
+  console.log(object)
   return (
     <Layout nav={true}>
       <TipBuilder data={object} />
@@ -43,7 +40,7 @@ export const Head = ({ data }) => (
 export default Tip
 
 export const basicPageQuery = graphql`
-  query PostQuery($id: String!) {
+  query PostQuery($id: String!, $skillids: [String]!) {
     tip: markdownRemark(id: { eq: $id }) {
       id
       html
@@ -51,26 +48,45 @@ export const basicPageQuery = graphql`
       frontmatter {
         id
         title
-        author
-        excerpt
         type
-        date
         permalink
-        
-        photo {
-          image {
-            childImageSharp {
-              gatsbyImageData(
-                width: 800
-                quality: 72
-                placeholder: DOMINANT_COLOR
-                formats: [AUTO, WEBP, AVIF]
-              )
-            }
-          }
+        code {
+          code
+          lang
         }
+        skills
         ...Seo
       }
+    },
+    skills: allMarkdownRemark(
+      filter: {frontmatter: {layout: {eq: "skill-builder"}, id: {in: $skillids}}}
+    ) {
+      edges {
+        node {
+            id
+            html
+            rawMarkdownBody
+            frontmatter {
+              id
+              title
+              permalink
+              photo {
+                  alt
+                  image {
+                      childImageSharp {
+                          gatsbyImageData(
+                          width: 800
+                          quality: 72
+                          placeholder: DOMINANT_COLOR
+                          formats: [AUTO, WEBP, AVIF]
+                          )
+                      }
+                  }
+              }
+            }
+        }
+      }
+
     }
   }
 `

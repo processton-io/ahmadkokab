@@ -9,6 +9,7 @@
   "dependencies": {
     "@netlify/plugin-csp-nonce": "^1.2.4",
     "clsx": "^1.2.1",
+    "decap-cms-app": "^3.0.12",
     "flowbite": "^1.6.5",
     "flowbite-react": "^0.4.6",
     "gatsby": "^5.3.3",
@@ -47,12 +48,14 @@
     "prop-types": "^15.6.0",
     "re-carousel": "^2.4.0",
     "react": "^18.2.0",
+    "react-code-blocks": "^0.1.5",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.41.3",
     "react-markdown": "^8.0.4",
     "react-netlify-form": "^2.1.5",
-    "react-parallax": "^3.5.1"
+    "react-parallax": "^3.5.1",
+    "sharp": "^0.32.6"
   },
   "keywords": [
     "gatsby"

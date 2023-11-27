@@ -1,7 +1,7 @@
 ---
 id: WfqPPmMMT
 type: post
-layout: post
+layout: story-builder
 title: Setting up a Multi-Project Docker Environment
 permalink: /stories/setting-up-a-multi-project-docker-environment/
 photo:

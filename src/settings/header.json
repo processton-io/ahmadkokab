@@ -11,6 +11,21 @@
       "permalink": "/skills"
     },
     {
+      "type": "default",
+      "name": "Blogs",
+      "permalink": "/blogs"
+    },
+    {
+      "type": "default",
+      "name": "Stories",
+      "permalink": "/stories"
+    },
+    {
+      "type": "default",
+      "name": "Code Snippets",
+      "permalink": "/tips"
+    },
+    {
       "name": "Contact me",
       "permalink": "/contact-me",
       "type": "default"

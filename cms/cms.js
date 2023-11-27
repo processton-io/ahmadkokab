@@ -1,4 +1,4 @@
-import CMS from 'netlify-cms-app';
+import CMS from 'decap-cms-app'
 import { Widget as UuidWidget } from 'netlify-cms-widget-id';
 import { Widget as PermalinkWidget } from 'netlify-cms-widget-permalink';
 
@@ -30,10 +30,14 @@ const config = {
       name: 'git-gateway',
       branch: 'main',
     },
+    publish_mode: 'editorial_workflow',
     slug: {
       encoding: 'ascii',
       clean_accents: true,
+      sanitize_replacement: "_"
     },
+    show_preview_links: false,
+    search: true,
     media_folder: '/static/img',
     public_folder: '/img',
     collections: [ pillar, pages, blogs, stories, tips,projects, skills, forms,authors, settings],

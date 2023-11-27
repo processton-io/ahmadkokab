@@ -2,8 +2,8 @@
 id: JSHSUIVHG
 type: page
 layout: page-builder
-title: Skills
-permalink: /skills/
+title: Skills-old
+permalink: /skills-old/
 breadcrumbs: []
 blocks:
   - type: heading
