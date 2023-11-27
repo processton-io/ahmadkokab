@@ -53,7 +53,7 @@ export default function Text({ children, className, ...props }) {
           </p>
         ),
         code: ({ node, ...props }) => {
-          const language = props.className.split('-');
+          const language = props.className ? props.className.split('-') : '';
           return (
           <CodeBlock
             text={props.children[0]}
