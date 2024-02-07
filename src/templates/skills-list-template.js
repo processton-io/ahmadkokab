@@ -68,6 +68,7 @@ function getCategoryTitle (category){
             return "Windows Services"
         default:
             return "Other"
+    }
 }
 
 export const blogListQuery = graphql`
