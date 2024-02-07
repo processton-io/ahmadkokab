@@ -20,7 +20,7 @@ export default class SkillsListTemplate extends React.Component {
             <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400"></p>
         </div>
         {categories.map(({category}) => { 
-            <>
+            return <>
                 <h3 className="mb-4 text-2xl lg:text-xl tracking-tight font-bold text-gray-700 dark:text-white">{getCategoryTitle(category)}</h3>
                 <div className="mx-auto grid max-w-6xl grid-cols-1 gap-3 md:gap-6 md:grid-cols-2 lg:grid-cols-4 px-4">
                     {posts.map(({ node }) => {
