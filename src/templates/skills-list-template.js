@@ -7,6 +7,7 @@ import { convertToBgImage } from "gbimage-bridge"
 import { BgImage } from 'gbimage-bridge';
 import Button from "../components/UI/Button"
 import Title from "../components/UI/Title"
+import { Link as GatsbyLink } from 'gatsby'
 export default class SkillsListTemplate extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges
