@@ -90,7 +90,7 @@ export default function Header() {
             <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                 <a href="/" className="flex items-center">
                     <StaticImage
-                      src={'../../static/img/afk_logo-removebg.png'}
+                      src={'../../static/img/afk_logo.png'}
                       alt={'AFAR LOGO'}
                       height={'auto'}
                       width={'48px'}
@@ -98,7 +98,7 @@ export default function Header() {
                       className="block dark:hidden"
                     />
                     <StaticImage
-                      src={'../../static/img/afk_logo-removebg.png'}
+                      src={'../../static/img/afk_logo_dark.png'}
                       alt={'AFAR LOGO'}
                       height={'auto'}
                       width={'48px'}
