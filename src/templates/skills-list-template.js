@@ -23,7 +23,7 @@ export default class SkillsListTemplate extends React.Component {
                 const title = node.frontmatter.title || node.frontmatter.permalink
                 const image = getImage(node.frontmatter.photo?.image)
                 
-                return <GatsbyLink to={node.frontmatter.permalink} key={node.frontmatter.permalink} className="flex flex-col border px-4 pb-4 bg-white text-black hover:bg-sky-300 space-y-4 relative">
+                return <GatsbyLink to={node.frontmatter.permalink} key={node.frontmatter.permalink} className="flex flex-col border px-4 pb-4 bg-white text-black hover:text-white hover:bg-gradient-to-r from-sky-800 from-10% via-sky-500 via-30% to-sky-300 to-90% space-y-4 relative">
                     <div class="absolute right-0 top-0 h-16 w-16">
                         <div
                             class="absolute transform rotate-45 bg-green-600 text-center text-white font-semibold py-1 right-[-35px] top-[32px] w-[170px]">
