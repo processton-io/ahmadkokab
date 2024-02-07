@@ -23,7 +23,7 @@ export default class SkillsListTemplate extends React.Component {
                 const title = node.frontmatter.title || node.frontmatter.permalink
                 const image = getImage(node.frontmatter.photo?.image)
                 
-                return <div key={node.frontmatter.permalink} className="flex flex-col border px-4 pb-4 bg-white text-black hover:bg-sky-300 space-y-4">
+                return <GatsbyLink to={node.frontmatter.permalink} key={node.frontmatter.permalink} className="flex flex-col border px-4 pb-4 bg-white text-black hover:bg-sky-300 space-y-4">
                     <div className="text-center">
                         <BgImage image={image} className='bg-cover h-24 w-24 object-contain mt-4 rounded-sm inline-block'></BgImage>
                     </div>
@@ -31,9 +31,8 @@ export default class SkillsListTemplate extends React.Component {
                         <Title Tag='h6' variant='xs' className='mb-4 short_description'>
                             {title}
                         </Title>
-                        <GatsbyLink to={node.frontmatter.permalink} className='text-sm'>read more ...</GatsbyLink>    
-                    </div>
-                </div>
+                    </div> 
+                </GatsbyLink>
 
             })}
         </div>
