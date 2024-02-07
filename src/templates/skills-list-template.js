@@ -30,7 +30,7 @@ export default class SkillsListTemplate extends React.Component {
                             const title = node.frontmatter.title || node.frontmatter.permalink
                             const image = getImage(node.frontmatter.photo?.image)
                             
-                            return <GatsbyLink to={node.frontmatter.permalink} key={node.frontmatter.permalink} className="flex flex-col border px-4 pb-4 bg-white text-black hover:text-white hover:bg-gradient-to-r active:text-white active:bg-gradient-to-b from-sky-300 from-10% via-sky-500 via-30% to-sky-300 to-90% space-y-4 relative overflow-hidden">
+                            return <GatsbyLink to={node.frontmatter.permalink} key={node.frontmatter.permalink} className="flex flex-col border px-4 pb-4 bg-white text-black hover:text-white hover:bg-gradient-to-r active:text-white active:bg-gradient-to-b from-sky-300 dark:from-gray-300 from-10% via-sky-500 dark:via-gray-500 via-30% to-sky-300 dark:to-gray-300 to-90% space-y-4 relative overflow-hidden">
                                 <div class="absolute right-0 top-0 h-16 w-16">
                                     <div
                                         class="absolute transform rotate-45 text-white bg-gradient-to-r from-green-800 from-10% via-green-500 via-30% to-green-300 to-90% text-center text-white font-semibold py-1 right-[-35px] top-[32px] w-[170px]">
@@ -41,7 +41,7 @@ export default class SkillsListTemplate extends React.Component {
                                     <BgImage image={image} className='bg-cover h-24 w-24 object-contain mt-4 rounded-sm inline-block'></BgImage>
                                 </div>
                                 <div className="text-center">
-                                    <Title Tag='h6' variant='xs' className='mb-4 short_description'>
+                                    <Title Tag='h6' variant='xs' className='mb-4 short_description '>
                                         {title}
                                     </Title>
                                 </div> 
