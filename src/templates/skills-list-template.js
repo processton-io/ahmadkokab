@@ -21,7 +21,9 @@ export default class SkillsListTemplate extends React.Component {
         </div>
         {categories.map((category) => {
             return <>
-                <h3 className="mb-4 text-2xl lg:text-xl tracking-tight font-bold text-gray-700 dark:text-white px-4">{getCategoryTitle(category)}</h3>
+                <div className="mx-auto max-w-6xl">
+                    <h3 className="mb-4 text-2xl lg:text-xl tracking-tight font-bold text-gray-700 dark:text-white px-4">{getCategoryTitle(category)}</h3>
+                </div>
                 <div className="mx-auto grid max-w-6xl grid-cols-1 gap-3 md:gap-6 md:grid-cols-2 lg:grid-cols-4 px-4">
                     {posts.map(({ node }) => {
                         if(node.frontmatter.type === category){
