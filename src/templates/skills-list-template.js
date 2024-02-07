@@ -6,6 +6,7 @@ import { getImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
 import { BgImage } from 'gbimage-bridge';
 import Button from "../components/UI/Button"
+import Title from "../components/UI/Title"
 export default class SkillsListTemplate extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges
@@ -15,21 +16,21 @@ export default class SkillsListTemplate extends React.Component {
             <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">My Skills</h2>
             <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400"></p>
         </div> 
-        <div className="container max-w-screen-xl mx-auto px-4">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-3 md:gap-6 md:grid-cols-2 lg:grid-cols-4 px-4">
             
             {posts.map(({ node }) => {
                 const title = node.frontmatter.title || node.frontmatter.permalink
                 const image = getImage(node.frontmatter.photo?.image)
                 
-                return <div key={node.frontmatter.permalink} className="w-full flex flex-col md:flex-row bg-white border border-gray-200 rounded-sm shadow dark:bg-gray-800 dark:border-gray-700">
-                    <BgImage image={image} className='bg-cover w-full h-48 md:h-auto md:w-2/5 lg:w-1/5 bg-no-repeat bg-bottom'></BgImage>
-                    <div className="p-5 w-full md:w-3/5 lg:w-4/5">
-                        <a href="#">
-                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
-                        </a>
-                        <div className="text-right">
-                            <Button variant="outline" button={{url:node.frontmatter.permalink}} className="">Read mores</Button>
-                        </div>
+                return <div key={node.frontmatter.permalink} className="flex flex-col border px-4 pb-4 bg-white text-black hover:bg-sky-300 space-y-4">
+                    <div className="text-center">
+                        <BgImage image={image} className='bg-cover h-24 w-24 object-contain mt-4 rounded-sm inline-block'></BgImage>
+                    </div>
+                    <div className="text-center">
+                        <Title Tag='h6' variant='xs' className='mb-4 short_description'>
+                            {title}
+                        </Title>
+                        <GatsbyLink to={node.frontmatter.permalink} className='text-sm'>read more ...</GatsbyLink>    
                     </div>
                 </div>
 
