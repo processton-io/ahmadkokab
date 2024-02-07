@@ -7,6 +7,7 @@ import { convertToBgImage } from "gbimage-bridge"
 import { BgImage } from 'gbimage-bridge';
 import Button from "../components/UI/Button"
 import clsx from "clsx"
+import { Link as GatsbyLink } from 'gatsby'
 export default class BlogListTemplate extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges
@@ -14,7 +15,6 @@ export default class BlogListTemplate extends React.Component {
       <Layout nav={true}>
         <div className="mx-auto max-w-screen-xl lg:mt-16 lg:mb-8 my-8 px-4">
             <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">My Blog</h2>
-            <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">Randome thoughts , Randome writings.</p>
         </div> 
         <div className="container max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 px-4">
             
@@ -23,7 +23,7 @@ export default class BlogListTemplate extends React.Component {
                 const image = getImage(node.frontmatter.photo?.image)
                 const excerpt = node.frontmatter.excerpt
                 
-                return <div key={node.frontmatter.permalink} className="bg-white border border-gray-200 rounded-sm shadow dark:bg-gray-800 dark:border-gray-700">
+                return <GatsbyLink to={node.frontmatter.permalink} key={node.frontmatter.permalink} className="bg-white border border-gray-200 rounded-sm shadow dark:bg-gray-800 dark:border-gray-700">
                     <BgImage image={image} className='bg-cover h-48 md:h-36 bg-no-repeat bg-bottom'></BgImage>
                     <div className={clsx("p-5  flex items-stretch flex-col ")}>
                         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white h-auto md:h-24">{title}</h5>
@@ -31,11 +31,8 @@ export default class BlogListTemplate extends React.Component {
                             "h-auto md:h-24": image !== undefined,
                             "h-auto md:h-56": image == undefined
                         })}>{excerpt}</div>
-                        <Button variant="outline" button={{url:node.frontmatter.permalink}} className={clsx("inline-flex self-end",{
-                            "mt-4": image == undefined
-                        })}>Read more</Button>
                     </div>
-                </div>
+                </GatsbyLink>
 
             })}
         </div>
