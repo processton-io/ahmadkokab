@@ -65,7 +65,6 @@ export const ImageField = (name = 'image', fieldName = 'photo') => ({
   widget: 'object',
   fields: [
     { label: 'Image', name, widget: 'image', required: false },
-    { label: 'Dark Mode Image', name, widget: 'dark_image', required: false },
     { label: 'Alt', name: 'alt', widget: 'string', required: false },
   ],
 });
