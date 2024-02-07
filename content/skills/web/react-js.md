@@ -2,6 +2,7 @@
 id: VXmvRZXol
 title: React Js
 type: front_end
+experience: 4+ years
 layout: skill-builder
 permalink: /skills/react-js/
 photo:

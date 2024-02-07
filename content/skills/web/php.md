@@ -3,6 +3,7 @@ id: rUdqapO-S
 layout: skill-builder
 title: PHP
 type: front_end
+experience: 12+ years
 permalink: /skills/php/
 photo:
   image: /img/php.png

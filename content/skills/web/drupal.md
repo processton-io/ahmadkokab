@@ -2,6 +2,7 @@
 id: a6T5VF2ES
 title: Drupal
 type: backend
+experience: 4+ years
 layout: skill-builder
 permalink: /skills/drupal/
 photo:

@@ -2,6 +2,7 @@
 id: y11O2n2-m
 title: Vue Js
 type: front_end
+experience: 6+ years
 layout: skill-builder
 permalink: /skills/vue-js/
 photo:

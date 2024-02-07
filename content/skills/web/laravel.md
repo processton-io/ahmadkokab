@@ -2,6 +2,7 @@
 id: mzmtA0c51
 title: Laravel
 type: backend
+experience: 7+ years
 layout: skill-builder
 permalink: /skills/laravel/
 photo:

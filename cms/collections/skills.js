@@ -35,6 +35,12 @@ const collection = {
       default: 'front_end',
       options: ["front_end", "backend", "windows_services", "dev_ops"],
     },
+    {
+      label: 'Experience',
+      name: 'experience',
+      widget: 'string',
+      default: '',
+    },
     PermalinkField('skills'),
     ImageField(),
     {
