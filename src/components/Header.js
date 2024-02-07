@@ -92,12 +92,16 @@ export default function Header() {
                     <StaticImage
                       src={'../../static/img/afk_logo-removebg.png'}
                       alt={'AFAR LOGO'}
-                      className="h-12 block dark:hidden"
+                      height={'auto'}
+                      width={'48px'}
+                      className="block dark:hidden"
                     />
                     <StaticImage
                       src={'../../static/img/afk_logo-removebg.png'}
                       alt={'AFAR LOGO'}
-                      className="h-12 hidden dark:block"
+                      height={'auto'}
+                      width={'48px'}
+                      className="hidden dark:block"
                     />
                     <div className='flex flex-col'>
                     {nav?.title && (
