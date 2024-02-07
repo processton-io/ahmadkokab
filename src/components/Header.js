@@ -6,6 +6,7 @@ import socialLinks from '../settings/social_links.json'
 import Image from '../resolvers/Image'
 
 import DarkmodeToggle from './DarkmodeToggle'
+import { StaticImage } from 'gatsby-plugin-image'
 
 export default function Header() {
   const [openDropDown, setOpenDropDown ] = useState(false);
@@ -88,13 +89,16 @@ export default function Header() {
         <nav className="bg-header-bg bg-headerBg text-headerTextDefaultColor border-gray-200 px-4 lg:px-6 py-0 dark:bg-gray-600 shadow">
             <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                 <a href="/" className="flex items-center">
-                    {nav?.photo?.image && (
-                      <Image
-                        src={nav?.photo?.image}
-                        alt={nav?.photo?.alt}
-                        className="h-12 "
-                      />
-                    )}
+                    <StaticImage
+                      src={'../../static/img/afk_logo-removebg.png'}
+                      alt={'AFAR LOGO'}
+                      className="h-12 block dark:hidden"
+                    />
+                    <StaticImage
+                      src={'../../static/img/afk_logo-removebg.png'}
+                      alt={'AFAR LOGO'}
+                      className="h-12 hidden dark:block"
+                    />
                     <div className='flex flex-col'>
                     {nav?.title && (
                       <span
