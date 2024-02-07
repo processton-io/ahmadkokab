@@ -13,13 +13,15 @@ export default class SkillsListTemplate extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges
     const categories = ["front_end", "backend" ,"dev_ops","windows_services"]
+    console.log(posts);
     return (
       <Layout nav={true}>
         <div className="mx-auto container max-w-screen-xl lg:my-16 my-8 px-4">
             <h2 className="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">My Skills</h2>
             <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400"></p>
         </div>
-        {categories.map(({category}) => { 
+        {categories.map((category) => { 
+            console.log(category);
             return <>
                 <h3 className="mb-4 text-2xl lg:text-xl tracking-tight font-bold text-gray-700 dark:text-white">{getCategoryTitle(category)}</h3>
                 <div className="mx-auto grid max-w-6xl grid-cols-1 gap-3 md:gap-6 md:grid-cols-2 lg:grid-cols-4 px-4">
@@ -32,7 +34,7 @@ export default class SkillsListTemplate extends React.Component {
                                 <div class="absolute right-0 top-0 h-16 w-16">
                                     <div
                                         class="absolute transform rotate-45 text-white bg-gradient-to-r from-green-800 from-10% via-green-500 via-30% to-green-300 to-90% text-center text-white font-semibold py-1 right-[-35px] top-[32px] w-[170px]">
-                                        12+ years
+                                        {node.frontmatter.experience}
                                     </div>
                                 </div>
                                 <div className="text-center">
@@ -88,6 +90,7 @@ query skillListQuery {
                     permalink
                     type
                     title
+                    experience
                     photo {
                         alt
                         image {
