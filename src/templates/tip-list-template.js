@@ -6,6 +6,7 @@ import { getImage } from "gatsby-plugin-image"
 import { convertToBgImage } from "gbimage-bridge"
 import { BgImage } from 'gbimage-bridge';
 import Button from "../components/UI/Button"
+import { Link as GatsbyLink } from 'gatsby'
 import clsx from "clsx"
 export default class TipListTemplate extends React.Component {
   render() {
@@ -22,14 +23,13 @@ export default class TipListTemplate extends React.Component {
                 const {frontmatter} = node;
                 const {title, code} = frontmatter;
                 
-                return <div key={node.frontmatter.permalink} className="w-full flex flex-col md:flex-row bg-white border border-gray-200 rounded-sm shadow dark:bg-gray-800 dark:border-gray-700">
+                return <GatsbyLink key={node.frontmatter.permalink} to={node.frontmatter.permalink} className="w-full flex flex-col md:flex-row bg-white border border-gray-200 rounded-sm shadow dark:bg-gray-800 dark:border-gray-700">
                     <div className={clsx("p-5  flex items-stretch flex-col ")}>
                         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
                         <div className={clsx("mb-3 pt-1 overflow-hidden font-normal text-gray-700 dark:text-gray-400 text-md",{
                         })}>{code.lang}</div>
-                        <Button variant="outline" button={{url:node.frontmatter.permalink}} className={clsx("inline-flex self-end")}>Read more</Button>
                     </div>
-                </div>
+                </GatsbyLink>
 
             })}
         </div>
