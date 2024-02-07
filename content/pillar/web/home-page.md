@@ -35,7 +35,7 @@ blocks:
           bg_settings:
             variant: bg-image
             overlay: no-overlay
-            bg_photo: /img/cloud-bg.png
+            bg_photo: /img/dark---sl_031821_41530_01.jpg
             bg_color: "#0e0e1b"
             bg_video: https://player.vimeo.com/video/516255210?title=0&portrait=0&byline=0&autoplay=1&muted=true&controls=0&loop=1
     variant: default
