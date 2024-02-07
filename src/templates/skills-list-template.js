@@ -25,7 +25,25 @@ export default class SkillsListTemplate extends React.Component {
                 <div className="mx-auto grid max-w-6xl grid-cols-1 gap-3 md:gap-6 md:grid-cols-2 lg:grid-cols-4 px-4">
                     {posts.map(({ node }) => {
                         if(node.frontmatter.type === category){
-                            return <SkillCard node={node} />
+                            const title = node.frontmatter.title || node.frontmatter.permalink
+                            const image = getImage(node.frontmatter.photo?.image)
+                            
+                            return <GatsbyLink to={node.frontmatter.permalink} key={node.frontmatter.permalink} className="flex flex-col border px-4 pb-4 bg-white text-black hover:text-white hover:bg-gradient-to-r active:text-white active:bg-gradient-to-r from-sky-800 from-10% via-sky-500 via-30% to-sky-300 to-90% space-y-4 relative overflow-hidden">
+                                <div class="absolute right-0 top-0 h-16 w-16">
+                                    <div
+                                        class="absolute transform rotate-45 text-white bg-gradient-to-r from-green-800 from-10% via-green-500 via-30% to-green-300 to-90% text-center text-white font-semibold py-1 right-[-35px] top-[32px] w-[170px]">
+                                        12+ years
+                                    </div>
+                                </div>
+                                <div className="text-center">
+                                    <BgImage image={image} className='bg-cover h-24 w-24 object-contain mt-4 rounded-sm inline-block'></BgImage>
+                                </div>
+                                <div className="text-center">
+                                    <Title Tag='h6' variant='xs' className='mb-4 short_description'>
+                                        {title}
+                                    </Title>
+                                </div> 
+                            </GatsbyLink>
                         }else{
                             return <></>
                         }
@@ -52,29 +70,6 @@ function getCategoryTitle (category){
             return "Other"
 }
 
-function SkillCard(node){
-
-    const title = node.frontmatter.title || node.frontmatter.permalink
-    const image = getImage(node.frontmatter.photo?.image)
-    
-    return <GatsbyLink to={node.frontmatter.permalink} key={node.frontmatter.permalink} className="flex flex-col border px-4 pb-4 bg-white text-black hover:text-white hover:bg-gradient-to-r active:text-white active:bg-gradient-to-r from-sky-800 from-10% via-sky-500 via-30% to-sky-300 to-90% space-y-4 relative overflow-hidden">
-        <div class="absolute right-0 top-0 h-16 w-16">
-            <div
-                class="absolute transform rotate-45 text-white bg-gradient-to-r from-green-800 from-10% via-green-500 via-30% to-green-300 to-90% text-center text-white font-semibold py-1 right-[-35px] top-[32px] w-[170px]">
-                12+ years
-            </div>
-        </div>
-        <div className="text-center">
-            <BgImage image={image} className='bg-cover h-24 w-24 object-contain mt-4 rounded-sm inline-block'></BgImage>
-        </div>
-        <div className="text-center">
-            <Title Tag='h6' variant='xs' className='mb-4 short_description'>
-                {title}
-            </Title>
-        </div> 
-    </GatsbyLink>
-}
-
 export const blogListQuery = graphql`
 query skillListQuery {
     allMarkdownRemark(
@@ -97,7 +92,7 @@ query skillListQuery {
                         image {
                             childImageSharp {
                                 gatsbyImageData(
-                                width: 800
+                                width: 64
                                 quality: 72
                                 placeholder: DOMINANT_COLOR
                                 formats: [AUTO, WEBP, AVIF]
