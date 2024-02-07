@@ -94,6 +94,7 @@ export default function Header() {
                       alt={'AFAR LOGO'}
                       height={'auto'}
                       width={'48px'}
+                      layout="constrained"
                       className="block dark:hidden"
                     />
                     <StaticImage
@@ -101,6 +102,7 @@ export default function Header() {
                       alt={'AFAR LOGO'}
                       height={'auto'}
                       width={'48px'}
+                      layout="constrained"
                       className="hidden dark:block"
                     />
                     <div className='flex flex-col'>
