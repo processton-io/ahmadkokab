@@ -89,17 +89,21 @@ export default function Header() {
         <nav className="bg-header-bg bg-headerBg text-headerTextDefaultColor border-gray-200 px-4 lg:px-6 py-0 dark:bg-gray-600 shadow">
             <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                 <a href="/" className="flex items-center">
-                    <Image
+                    <StaticImage
                       src={'../../static/img/afk_logo.png'}
                       alt={'AFAR LOGO'}
-                      layout="constrained"
-                      className="h-12 block dark:hidden"
+                      height={'106px'}
+                      width={'48px'}
+                      layout="fixed"
+                      className="block dark:hidden"
                     />
-                    <Image
+                    <StaticImage
                       src={'../../static/img/afk_logo_dark.png'}
                       alt={'AFAR LOGO'}
-                      layout="constrained"
-                      className="h-12 hidden dark:block"
+                      height={'106px'}
+                      width={'48px'}
+                      layout="fixed"
+                      className="hidden dark:block"
                     />
                     <div className='flex flex-col'>
                     {nav?.title && (
