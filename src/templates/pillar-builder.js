@@ -7,7 +7,6 @@ import DefaultHead from '../components/Head/DefaultHead'
 import PillarBuilder from '../Builders/PillarBuilder'
 
 const Pillar = ({ data }) => {
-  console.log(data)
   return (
     <Layout nav={true}  footer={false}>
       <PillarBuilder pillars={data.pillar.frontmatter.pillars} />

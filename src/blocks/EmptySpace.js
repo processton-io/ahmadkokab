@@ -3,7 +3,6 @@ import clsx from 'clsx';
 
 export default function EmptySpace({ data }) {
   
-    // console.log(data);
       return (
         <div className={ 
           clsx({

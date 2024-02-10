@@ -15,7 +15,7 @@ export default class StoriesPreview extends React.Component {
       'date': date.data,
       'showTime': false
     }
-    console.log(data)
+
     return (
       <>
         <StoryBuilder data={data} />

@@ -10,9 +10,7 @@ export default class TipsPreview extends React.Component {
     const relations = this.props.fieldsMetaData.toJS();
     let skills = [];
     if(relations.skills){
-      console.log(relations.skills)
       for (const [key, skill] of Object.entries(relations.skills.skill)) {
-        console.log(`${key}: ${skill}`);
         skills.push({
             node: {
               frontmatter: {
@@ -33,15 +31,6 @@ export default class TipsPreview extends React.Component {
       'skills': skills
     }
     
-    // const skillsCollect = this.props.fieldsMetaData.getIn(['skill', skills]);
-    // const relations = this.props.fieldsMetaData.toJS();
-    console.log(data)
-    // var posts = this.props.widgetsFor('skills').map(function(skill, index) {
-    //     console.log(skill)
-    //     console.log(skill.getIn(['skill', 'id']))
-    //     return skill
-    // });
-    // console.log(posts)
     
     return (
       <>

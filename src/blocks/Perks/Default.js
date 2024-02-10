@@ -27,7 +27,6 @@ export default function Default({ data, preview = false }) {
 
 
 function Card({ i, col , preview = false }) {
-  console.log(col?.photo?.image)
   return (
     <div className='flex flex-col border px-4 pb-4 bg-white text-black hover:bg-sky-300 space-y-4' key={i}>
       {col?.photo?.image != undefined && (

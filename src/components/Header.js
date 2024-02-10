@@ -2,8 +2,6 @@ import clsx from 'clsx'
 import React, { useState } from 'react'
 import { Link as GatsbyLink } from 'gatsby'
 import nav from '../settings/header.json'
-import socialLinks from '../settings/social_links.json'
-import Image from '../resolvers/Image'
 
 import DarkmodeToggle from './DarkmodeToggle'
 import { StaticImage } from 'gatsby-plugin-image'
@@ -86,24 +84,24 @@ export default function Header() {
             </div>
           </nav>
         )}
-        <nav className="bg-header-bg bg-headerBg text-headerTextDefaultColor border-gray-200 px-4 lg:px-6 py-0 dark:bg-gray-600 shadow">
-            <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-                <a href="/" className="flex items-center">
+        <nav className="bg-header-bg bg-headerBg text-headerTextDefaultColor border-gray-200 px-4 lg:px-6 py-0 dark:bg-gray-700 shadow">
+            <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl py-2">
+                <GatsbyLink to="/" className="flex items-center">
                     <StaticImage
                       src={'../../static/img/afk_logo.png'}
                       alt={'AFAR LOGO'}
                       height={'106px'}
                       width={'48px'}
-                      layout="fixed"
-                      className="block dark:hidden"
+                      layout="fullWidth"
+                      className="block w-12 dark:hidden"
                     />
                     <StaticImage
                       src={'../../static/img/afk_logo_dark.png'}
                       alt={'AFAR LOGO'}
                       height={'106px'}
                       width={'48px'}
-                      layout="fixed"
-                      className="hidden dark:block"
+                      layout="fullWidth"
+                      className="hidden w-12 dark:block"
                     />
                     <div className='flex flex-col'>
                     {nav?.title && (
@@ -125,7 +123,7 @@ export default function Header() {
                       </span>
                     )}
                     </div>
-                </a>
+                </GatsbyLink>
                 <div className="flex items-center lg:order-2 lg:hidden">
                     <button type="button" onClick={toggleDropDown} className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
                         <span className="sr-only">Open main menu</span>

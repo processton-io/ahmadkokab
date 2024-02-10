@@ -29,6 +29,7 @@ const config = {
     backend: {
       name: 'git-gateway',
       branch: 'main',
+      local_backend: true
     },
     publish_mode: 'editorial_workflow',
     slug: {

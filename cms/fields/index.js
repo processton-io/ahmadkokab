@@ -82,7 +82,7 @@ export const backgroundSettingsField = () => ({
   widget: 'object',
   collapsed:true,
   fields: [
-    VariantField('no-bg',['no-bg','bg-image','bg-image-parralax','bg-color']),
+    VariantField('no-bg',['no-bg','bg-image','bg-image-parralax','bg-color','bg-cloud']),
     Overlay('no-overlay'),
     { label: 'Image', name: 'bg_photo', widget: 'image', required: false },
     { label: 'Color', name: 'bg_color', widget: 'color', required: false },

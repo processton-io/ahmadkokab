@@ -57,3 +57,13 @@
     height: var(--video-height);
     transform: translate(-50%, -50%);
 }
+
+.bannerBg {
+    background-image: url("../../static/img/cloud-bg.png");
+}
+.dark .bannerBg {
+    background-image: url("../../static/img/dark---sl_031821_41530_01.jpg");
+}
+.dark .bannerBg>div{
+    background-color: rgba(0, 0, 0, 0.5);   
+}

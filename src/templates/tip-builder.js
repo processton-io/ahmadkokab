@@ -14,7 +14,6 @@ const Tip = ({ data }) => {
     'skills': data.skills.edges,
     'body' : data.tip.rawMarkdownBody.edges
   };
-  console.log(object)
   return (
     <Layout nav={true}>
       <TipBuilder data={object} />

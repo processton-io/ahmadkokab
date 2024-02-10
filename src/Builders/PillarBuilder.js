@@ -12,12 +12,10 @@ import WideSlider from '../blocks/WideSlider';
 import Heading from '../blocks/Heading';
 
 export default function PillarBuilder({ pillars, preview = false }) {
-  console.log(pillars)
   return (
     <>
       {pillars &&
         pillars.map((pillar, i) => {
-          console.log(pillar)
           switch (pillar.type) {
             case 'hero_slider':
               return <Heros key={i} data={pillar} preview={preview} />;

@@ -22,7 +22,6 @@ export default function Form({ block }) {
     .replace(/[\s_-]+/g, '-')
     .replace(/^-+|-+$/g, '');
 
-  // console.log(blocks)
 
   const convertToSafeInputFieldName = (str) => {
     // Replace any non-alphanumeric characters with underscores
@@ -54,7 +53,6 @@ export default function Form({ block }) {
     
     let data = {};
     for (var pair of formData.entries()) {
-      console.log(pair[0] + ": " + pair[1]);
       data[pair[0]] = pair[1];
     }
 
@@ -64,7 +62,6 @@ export default function Form({ block }) {
       body: encode({"form-name": slugify(block.title), ...data}),
     })
       .then((response) => {
-        console.log(response)
         setSuccessMessage(form.settings.success_msg ? form.settings.success_msg : "Your request is submitted")
       })
       .catch((error) => {

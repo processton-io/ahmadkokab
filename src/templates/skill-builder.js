@@ -11,8 +11,10 @@ const Skill = ({ data }) => {
   const bgImage =   typeof data.skill.frontmatter?.photo === 'string' ? data.skill.frontmatter?.photo : data.skill.frontmatter?.photo?.image?.childImageSharp?.gatsbyImageData?.images?.fallback?.src
    
   const object = {
+    'id': data.skill.frontmatter.id,
     'title': data.skill.frontmatter.title,
     'excerpt' : data.skill.frontmatter.excerpt,
+    'experience': data.skill.frontmatter.experience,
     'body' : data.skill.rawMarkdownBody,
     'thumbnail': bgImage,
     'date': data.skill.frontmatter.date,
@@ -53,10 +55,10 @@ export const basicPageQuery = graphql`
         title
         author
         excerpt
+        experience
         type
         date
         permalink
-        
         photo {
           image {
             childImageSharp {

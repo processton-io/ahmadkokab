@@ -9,4 +9,6 @@ photo:
   image: /img/php.png
 seo:
   ogimage: /img/php.png
+  title: PHP
 ---
+As a PHP developer, i have expertise in writing social media applications, enterprise management systems.

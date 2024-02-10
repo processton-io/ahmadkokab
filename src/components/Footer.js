@@ -2,18 +2,15 @@ import React from 'react';
 import footer from '../settings/footer.json'
 import clsx from 'clsx'
 import { Link as GatsbyLink } from 'gatsby'
-import Image from '../resolvers/Image'
-import socialLinks from '../settings/social_links.json'
 
 export default function Footer() {
 
   return (
     <footer className="p-4 bg-footerBg md:p-8 lg:p-10 dark:bg-gray-800">
       <div className="mx-auto max-w-screen-xl text-center">
-          {footer?.content && ( <p className="my-6 text-gray-500 dark:text-gray-400">{footer?.content}</p>)}
+          {(footer.nav && footer.nav.length > 0) && 
           <ul className="flex flex-wrap justify-center items-center mb-6 text-gray-900 dark:text-white">
-            {footer.nav && (
-              footer.nav.map((button , i) => {
+            {footer.nav.map((button , i) => {
                 return <li
                     key={i}>
                   <GatsbyLink className={
@@ -28,8 +25,9 @@ export default function Footer() {
                   </GatsbyLink>
                 </li>
               })
-            )}
-          </ul>
+            }
+          </ul>}
+          {(footer.show_social_links && footer?.social_links && footer?.social_links.length > 0) &&
           <ul className="flex justify-center mt-5 space-x-5">
             { footer.show_social_links && footer?.social_links && (footer?.social_links.map((link, i) => {
                     switch (link.platform) {
@@ -68,8 +66,8 @@ export default function Footer() {
                     }
                 }))}
               
-          </ul>
-          {footer.copyright && (<span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">&copy; {footer.copyright} <a href="/" className="hover:underline">Edge Base</a>. All Rights Reserved.</span>)}
+          </ul>}
+          {footer.copyright && (<span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">&copy; {footer.copyright} <a href="/" className="hover:underline">Ahmad Faryab Kokab</a>. All Rights Reserved.</span>)}
       </div>
     </footer>
   );

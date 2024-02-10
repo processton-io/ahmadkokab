@@ -3,14 +3,12 @@ import clsx from 'clsx';
 
 import { getImage } from "gatsby-plugin-image"
 
-import { convertToBgImage } from "gbimage-bridge"
+import { BgImage, convertToBgImage } from "gbimage-bridge"
 
 import HeroGenerator from './Hero/HeroGenerator';
 
 export default function Hero({ data,  height }) {
   const image = getImage(data.bg_settings?.bg_photo)
-  console.log(image, data)
-  const bgImage = convertToBgImage(image)
   data.height = height;
   switch (data.bg_settings.variant){
     case 'bg-video':
@@ -38,7 +36,16 @@ export default function Hero({ data,  height }) {
       )
     case 'bg-image':
       return (
-        <div className='bg-cover bg-no-repeat bg-bottom' style={ {backgroundImage: `url(`+bgImage?.fluid?.src+`)`}}>
+        <BgImage  className='bg-cover bg-no-repeat bg-bottom' image={image} >
+          <div className={ clsx({ 'bg-opacity-20':true, 'bg-white' : data.bg_settings.overlay === 'white', 'bg-black' : data.bg_settings.overlay === 'dark' })}>
+            <HeroGenerator data={data} />
+          </div>
+        </BgImage>
+        
+      )
+    case 'bg-cloud':
+      return (
+        <div  className='bg-cover bg-no-repeat bg-bottom bannerBg' >
           <div className={ clsx({ 'bg-opacity-20':true, 'bg-white' : data.bg_settings.overlay === 'white', 'bg-black' : data.bg_settings.overlay === 'dark' })}>
             <HeroGenerator data={data} />
           </div>

@@ -7,7 +7,6 @@ import DefaultHead from '@/components/Head/DefaultHead'
 import BlogBuilder from '../Builders/BlogBuilder'
 
 const Blog = ({ data }) => {
-  
   const bgImage =   typeof data.blog.frontmatter?.photo === 'string' ? data.blog.frontmatter?.photo : data.blog.frontmatter?.photo?.image?.childImageSharp?.gatsbyImageData?.images?.fallback?.src
    
   const object = {

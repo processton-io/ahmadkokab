@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const { createFilePath } = require('gatsby-source-filesystem');
 
+
 exports.createPages = async  ({ actions, graphql }) => {
   const { createPage , createSlice} = actions;
 

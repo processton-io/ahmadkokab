@@ -1,11 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import  Layout from "../components/Layout"
-import Image from "../resolvers/Image"
-import { getImage } from "gatsby-plugin-image"
-import { convertToBgImage } from "gbimage-bridge"
-import { BgImage } from 'gbimage-bridge';
-import Button from "../components/UI/Button"
 import { Link as GatsbyLink } from 'gatsby'
 import clsx from "clsx"
 export default class TipListTemplate extends React.Component {

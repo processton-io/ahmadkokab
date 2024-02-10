@@ -33,7 +33,7 @@ blocks:
             #### I can help you overcome your technical challenges.
           video: ""
           bg_settings:
-            variant: bg-image
+            variant: bg-cloud
             overlay: no-overlay
             bg_photo: /img/cloud-bg.png
             bg_color: "#0e0e1b"

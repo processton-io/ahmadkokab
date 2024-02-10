@@ -5,7 +5,6 @@ import Container from '../components/UI/Container';
 import Text from '../components/UI/Text';
 
 export default function Heading({ data }) {
-  console.log(data);
   return (
     
     <section className=' py-5' style={{ backgroundColor: data.bg_settings.bg_color}}>

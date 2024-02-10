@@ -6,7 +6,6 @@ import { CodeBlock, dracula } from 'react-code-blocks';
 export default function Text({ children, className, ...props }) {
 
   const generateLinkTarget = (link) => {
-    // console.log(generateLinkTarget)
     return link.startsWith(process.env.GATSBY_WEB_URL) || link.startsWith("/") ? "_self" : "_blank"
   }
   return (
@@ -18,42 +17,42 @@ export default function Text({ children, className, ...props }) {
           </a>
         ),
         h1: ({ node, ...props }) => (
-          <h1 className={'text-6xl '+  props.className}>
+          <h1 className={'text-6xl '+  className}>
             {props.children}
           </h1>
         ),
         h2: ({ node, ...props }) => (
-          <h2 className={'text-5xl mb-4'+  props.className}>
+          <h2 className={'text-5xl mb-4'+  className}>
             {props.children}
           </h2>
         ),
         h3: ({ node, ...props }) => (
-          <h3 className={'text-4xl mb-3 '+  props.className}>
+          <h3 className={'text-4xl mb-3 '+  className}>
             {props.children}
           </h3>
         ),
         h4: ({ node, ...props }) => (
-          <h4 className={'text-3xl mb-2 '+  props.className}>
+          <h4 className={'text-3xl mb-2 '+  className}>
             {props.children}
           </h4>
         ),
         h5: ({ node, ...props }) => (
-          <h5 className={'text-2xl mb-1 '+  props.className}>
+          <h5 className={'text-2xl mb-1 '+  className}>
             {props.children}
           </h5>
         ),
         h6: ({ node, ...props }) => (
-          <h6 className={'text-xl '+  props.className}>
+          <h6 className={'text-xl '+  className}>
             {props.children}
           </h6>
         ),
         p: ({ node, ...props }) => (
-          <p className={'prose dark:prose-invert '+  props.className}>
+          <p className={'prose dark:prose-invert '+  className}>
             {props.children}
           </p>
         ),
         code: ({ node, ...props }) => {
-          const language = props.className ? props.className.split('-') : '';
+          const language = className ? className.split('-') : '';
           return (
           <CodeBlock
             text={props.children[0]}
