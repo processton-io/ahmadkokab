@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import Layout from '@/components/Layout'
 import DefaultHead from '../components/Head/DefaultHead'
-import PillarBuilder from '../Builders/PillarBuilder'
+import PillarBuilder, {Pillars} from '../Builders/PillarBuilder'
 
 const Pillar = ({ data }) => {
   return (

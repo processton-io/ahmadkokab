@@ -49,7 +49,7 @@ export default function PillarBuilder({ pillars, preview = false }) {
   );
 }
 
-export const query = graphql`
+export const Pillars = graphql`
   fragment Pillars on MarkdownRemarkFrontmatter {
     pillars: blocks {
       type

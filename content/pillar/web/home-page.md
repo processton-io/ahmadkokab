@@ -11,26 +11,16 @@ blocks:
     heros:
       - hero:
           buttons:
-            - button:
-                variant: button
-                content: Contact me
-                url: /contact-me
           variant: default
-          height: full
+          height: 80vh
           ratio: 10/2
           color_theme: dark
           photo:
-            image: ""
+            image: /img/mydp.jpg
             alt: Logo
-          title: ""
+          title: "Hi, I’m Ahmad Faryab"
           content: |-
-            ## Hi, i'm
-
-            # Ahmad Faryab Kokab
-
-            ### Creative developer from Pakistan.
-
-            #### I can help you overcome your technical challenges.
+            # Full-Stack Developer, Problem Solver, Innovator.
           video: ""
           bg_settings:
             variant: bg-cloud

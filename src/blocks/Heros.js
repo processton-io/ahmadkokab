@@ -8,8 +8,7 @@ export default function Heros({ data }) {
   
   return (
     <div className={clsx({ 
-            "min-h-screen": data.height === 'full', 
-            "min-h-80vh": data.height === '80vh', 
+            "min-h-80vh": data.height === 'full' || data.height === '80vh', 
             "min-h-60vh": data.height === '60vh', 
             "min-h-40vh": data.height === '40vh', 
             "min-h-20vh": data.height === '20vh', 

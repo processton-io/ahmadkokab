@@ -16,40 +16,58 @@ export default function Text({ children, className, ...props }) {
             {props.children}
           </a>
         ),
+        ol: ({ node, ...props }) => (
+          <ol className={'list-decimal pl-6 my-1 '+  className}>
+            {props.children}
+          </ol>
+        ),
+        ul: ({ node, ...props }) => (
+          <ul className={'list-disc pl-6 my-1 '+  className}>
+            {props.children}
+          </ul>
+        ),
+        li: ({ node, ...props }) => (
+          <li className={'dark:text-white '+  className}>
+            {props.children}
+          </li>
+        ),
         h1: ({ node, ...props }) => (
-          <h1 className={'text-6xl '+  className}>
+          <h1 className={'text-3xl dark:text-white mb-4 '+  className}>
             {props.children}
           </h1>
         ),
         h2: ({ node, ...props }) => (
-          <h2 className={'text-5xl mb-4'+  className}>
+          <h2 className={'text-2xl dark:text-white mb-4 '+  className}>
             {props.children}
           </h2>
         ),
         h3: ({ node, ...props }) => (
-          <h3 className={'text-4xl mb-3 '+  className}>
+          <h3 className={'text-xl dark:text-white mb-3 '+  className}>
             {props.children}
           </h3>
         ),
         h4: ({ node, ...props }) => (
-          <h4 className={'text-3xl mb-2 '+  className}>
+          <h4 className={'text-xl dark:text-white font-bolder mb-2 '+  className}>
             {props.children}
           </h4>
         ),
         h5: ({ node, ...props }) => (
-          <h5 className={'text-2xl mb-1 '+  className}>
+          <h5 className={'text-xl dark:text-white font-bold mb-1 '+  className}>
             {props.children}
           </h5>
         ),
         h6: ({ node, ...props }) => (
-          <h6 className={'text-xl '+  className}>
+          <h6 className={'text-xl dark:text-white '+  className}>
             {props.children}
           </h6>
         ),
         p: ({ node, ...props }) => (
-          <p className={'prose dark:prose-invert '+  className}>
+          <p className={'prose dark:text-white dark:prose-invert mb-1 '+  className}>
             {props.children}
           </p>
+        ),
+        hr: ({ node, ...props }) => (
+          <hr className='my-6' />
         ),
         code: ({ node, ...props }) => {
           const language = className ? className.split('-') : '';

@@ -17,7 +17,7 @@ export default function WithUserAvatar({ data }) {
             "h-auto md:min-h-20vh": data.height === '20vh', 
             "h-auto": data.height === 'auto'
             })}>
-            <div className="mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <div className="mx-auto flex px-5 py-24 md:flex-row flex-row items-center">
                 <div className="md:w-2/3 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
                     {data?.title && (<h1 className={clsx({"title-font sm:text-4xl text-3xl mb-4 font-medium " : true , 'text-white': data.color_theme === 'white' , 'text-gray-900': data.color_theme === 'dark'})}>{data?.title}</h1>)}
                     {data?.content && (<Text className={clsx({"mb-8 leading-relaxed" : true , 'text-white': data.color_theme === 'white' , 'text-gray-500': data.color_theme === 'dark'})}>{data?.content}</Text>)}
@@ -31,7 +31,7 @@ export default function WithUserAvatar({ data }) {
                     )}
                 </div>
                 { data?.photo && (
-                    <div className="lg:max-w-lg w-full md:w-1/3 lg:w-2/6 text-center md:text-left">
+                    <div className="lg:max-w-lg w-full md:w-1/3 text-center md:text-left">
                         { data?.photo && (<Image
                                 src={data?.photo?.image}
                                 alt={data?.photo?.alt}

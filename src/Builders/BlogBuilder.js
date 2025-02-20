@@ -41,7 +41,7 @@ export default function BlogBuilder(data) {
                                     <h1 className="flex-1 mb-4 mt-4 lg:mt-6 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">{data.data.title}</h1>
                                     { data?.data?.showTime && data?.data?.showTime === true && 
                                         <div className='flex-0'>
-                                            <p className='font-medium text-gray-900 text-right'>{moment(data.data.date).format("MMM Do YYYY")}</p>
+                                            <p className='font-medium text-gray-900 dark:text-white text-right'>{moment(data.data.date).format("MMM Do YYYY")}</p>
                                         </div>
                                     }
                                 </div>

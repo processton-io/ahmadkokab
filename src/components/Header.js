@@ -15,7 +15,7 @@ export default function Header() {
   return (
       <header>
         {nav?.show_mini_bar === true && (
-          <nav className="bg-headerSocialBg text-headerSocialTextDefaultColor border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 shadow">
+          <nav className="bg-headerSocialBg hidden text-headerSocialTextDefaultColor border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 shadow">
             <div className="flex flex-wrap space-y-2 xl:space-y-0 justify-between items-center mx-auto max-w-screen-xl">
               <div className='flex flex-col md:flex-row space-y-3 space-x-0 md:space-y-0 md:space-x-3 '>
                 {nav?.show_contact_links && nav?.contact_links && (nav?.contact_links.map((link, i) => {
@@ -84,7 +84,7 @@ export default function Header() {
             </div>
           </nav>
         )}
-        <nav className="bg-header-bg bg-headerBg text-headerTextDefaultColor border-gray-200 px-4 lg:px-6 py-0 dark:bg-gray-700 shadow">
+        <nav className="bg-header-bg bg-headerSocialBg text-headerTextDefaultColor border-gray-200 px-4 lg:px-6 py-0 dark:bg-gray-700 shadow">
             <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl py-2">
                 <GatsbyLink to="/" className="flex items-center">
                     <StaticImage
