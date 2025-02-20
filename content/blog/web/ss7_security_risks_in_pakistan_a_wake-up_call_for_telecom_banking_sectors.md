@@ -2,7 +2,8 @@
 id: 1OLyLVpGT
 type: post
 layout: post
-title: SS7 Security Risks in Pakistan – A Wake-Up Call for Telecom & Banking Sectors
+title: SS7 Security Risks in Pakistan – A Potential Thread for Telecom & Banking
+  Sectors
 permalink: /blog/ss7-security-risks/
 photo:
   image: /img/23175.jpg
